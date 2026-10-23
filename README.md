@@ -1,5 +1,8 @@
 # Neurological-AI-project
-There and big issues in the current world.The shortage of RAM is quite dire and this project is an attempt to run frontier level intelligence AI on minimal hardware,
+There and big issues in the current world.The shortage of RAM is quite dire and this project is an attempt to run frontier level intelligence AI on minimal hardware.The core design was a simultaneous discovery.I first modeled it after my own thought process then i realised that scientists had already published papers highly similar to my own architecture,however my design adds extra elements that i beleive will boost overall model accuracy and intelligence.
+
+# Design 
+To check out the design,please refer to [AI Agent and topology](AI agent and topology) file.
 
 ##License & Terms of Use
 
