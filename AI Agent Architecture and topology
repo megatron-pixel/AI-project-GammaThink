@@ -1,0 +1,69 @@
+# AI Agent Local Topology & Logic Execution Framework
+
+## 1. System Block Diagram (Text-Based)
+
+```
++--------------------------------------------------------------------------+
+|                  HOST MACHINE (LOCAL CONTAINER BRIDGE / IPC)             |
+|                                                                          |
+|  [ User UI / Input ]                                                     |
+|         │                                                                |
+|         │ 1. Raw Text Query                                              |
+|         ▼                                                                |
+|  [ Language Parser ]  ◄─── (Sub-1B parameter LLM)                        |
+|         │                                                                |
+|         │ 2. Domain-Specific Language (DSL) Tokens                       |
+|         ▼                                                                |
+|  [ Reasoning Core ]  ◄─── (Untrained Pure Algebraic Logic Engine)        |
+|         │        ▲                                                       |
+|         │        │ 3. Local RAG Lookup (Fact Validation)                 |
+|         ▼        │                                                       |
+|  [ Kiwix ZIM Library ]                                                   |
+|                                                                          |
+|  ──────────────────────────────────────────────────────────────────────  |
+|  4. Pure Logic Answer Sent Back to User                                  |
+|  [ Reasoning Core ] ──────────────────────────────────► [ User UI / Input ]|
++--------------------------------------------------------------------------+
+```
+
+---
+
+## 2. Chain of Thought (CoT) & Tree of Knowledge (ToK) Architecture
+
+This pipeline traces how a statement transitions from a single principle to a proven fact using first-principles deduction.
+
+```
+[ Root Principle / Single Axiom ] 
+       │
+       ▼
+[ Algebraic Logic Parsing ] (Formulates the core thesis statement)
+       │
+       ▼
+ ───[ Kiwix ZIM Library Lookup ] (RAG Retrieval Engine)
+       │
+       ├──> [ First Evidence Extracted ] (Verified facts from local archive)
+       │
+       ▼
+[ Chain of Thought / Linear Deductions ]
+       │
+       ├──> Deduction 1: Synthesize Root Principle + First Evidence
+       ├──> Deduction 2: Eliminate logical contradictions (Pure Logic)
+       └──> Deduction 3: Resolve algebraic constraints
+       │
+       ▼
+[ Tree of Knowledge Expansion ] (Branching alternative hypotheses)
+       │
+       ├──> Branch A: [ Valid Core Proof ] ──> (Syllogistic Validation)
+       └──> Branch B: [ Contradictory Path ] ──> [ PRUNED / REJECTED ]
+       │
+       ▼
+[ Pure Logic Synthesized Answer ] (Returned to User UI)
+```
+
+---
+
+## 3. Operational Mechanics
+
+1. **Zero-Training Axiomatic Parsing:** The Sub-1B model does not store historical facts in its weights; it functions strictly as a grammar translator to build an Abstract Syntax Tree (AST) representing the query.
+2. **Deterministic Processing:** The reasoning engine operates on mathematical logic constraints, checking valid syntax structures rather than assigning soft statistical weights.
+3. **Detachable Grounding Store:** The local Kiwix ZIM archive acts as a static read-only database. It can be unmounted or hot-swapped without retraining any weights, ensuring zero external data dependencies.
