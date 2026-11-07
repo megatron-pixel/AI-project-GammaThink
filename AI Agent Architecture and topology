@@ -1,69 +1,829 @@
-# AI Agent Local Topology & Logic Execution Framework
 
-## 1. System Block Diagram (Text-Based)
+GAMMATHINK — AI AGENT ARCHITECTURE AND TOPOLOGY
+REVISION 2.0
 
-```
-+--------------------------------------------------------------------------+
-|                  HOST MACHINE (LOCAL CONTAINER BRIDGE / IPC)             |
-|                                                                          |
-|  [ User UI / Input ]                                                     |
-|         │                                                                |
-|         │ 1. Raw Text Query                                              |
-|         ▼                                                                |
-|  [ Language Parser ]  ◄─── (Sub-1B parameter LLM)                        |
-|         │                                                                |
-|         │ 2. Domain-Specific Language (DSL) Tokens                       |
-|         ▼                                                                |
-|  [ Reasoning Core ]  ◄─── (Untrained Pure Algebraic Logic Engine)        |
-|         │        ▲                                                       |
-|         │        │ 3. Local RAG Lookup (Fact Validation)                 |
-|         ▼        │                                                       |
-|  [ Kiwix ZIM Library ]                                                   |
-|                                                                          |
-|  ──────────────────────────────────────────────────────────────────────  |
-|  4. Pure Logic Answer Sent Back to User                                  |
-|  [ Reasoning Core ] ──────────────────────────────────► [ User UI / Input ]|
-+--------------------------------------------------------------------------+
-```
+                         USER INPUT
+                             |
+                             v
+              +-----------------------------+
+              | NEURAL LANGUAGE INTERPRETER |
+              | Small language model (<1B)  |
+              | Natural Language -> DSL/IR  |
+              +--------------+--------------+
+                             |
+                             v
+              +-----------------------------+
+              | GOAL DECOMPOSITION ENGINE   |
+              | - Goals and subgoals        |
+              | - Constraints               |
+              | - Dependencies              |
+              | - Success conditions        |
+              +--------------+--------------+
+                             |
+                             v
+              +-----------------------------+
+              | SYMBOLIC REASONING ENGINE   |
+              | - Backward chaining         |
+              | - Forward inference         |
+              | - First-principles logic    |
+              | - Constraint solving        |
+              | - Hypothesis generation     |
+              | - Search and pruning        |
+              | - Derivation reuse          |
+              +--------------+--------------+
+                             |
+                             v
+              +-----------------------------+
+              | KNOWLEDGE RETRIEVAL ENGINE  |
+              | - Query planning            |
+              | - Indexed search            |
+              | - Dependency resolution     |
+              | - RAM caching               |
+              | - SSD retrieval             |
+              | - Remote retrieval          |
+              +--------------+--------------+
+                             |
+             +---------------+---------------+
+             |               |               |
+             v               v               v
+      +-------------+ +-------------+ +-------------+
+      | KIWIX ZIM   | | CoK SNAPSHOT| | DISTRIBUTED |
+      | ARCHIVES    | | ARCHIVES    | | KNOWLEDGE   |
+      |             | | (.gks)      | | NETWORK     |
+      | Documents   | | Claims      | | Remote      |
+      | References  | | Rules       | | snapshots   |
+      | Research    | | Derivations | | and commits |
+      | Sources     | | Proofs      | |             |
+      +------+------+ +------+------+ +------+------+
+             |               |               |
+             +---------------+---------------+
+                             |
+                             v
+              +-----------------------------+
+              | KNOWLEDGE COMPILER          |
+              | - Source interpretation     |
+              | - Fact extraction           |
+              | - Rule extraction           |
+              | - Evidence attribution      |
+              | - Structured representation |
+              +--------------+--------------+
+                             |
+                             v
+              +-----------------------------+
+              | CHAIN OF KNOWLEDGE (CoK)    |
+              | - Directed hypergraph       |
+              | - Claims and premises       |
+              | - Logical relationships     |
+              | - Derivation dependencies   |
+              | - Evidence and provenance   |
+              | - Contradiction tracking    |
+              | - Uncertainty tracking      |
+              | - Reusable verified results |
+              +--------------+--------------+
+                             |
+                             v
+              +-----------------------------+
+              | VERIFICATION ENGINE         |
+              | - Logical consistency       |
+              | - Proof validation          |
+              | - Assumption checking       |
+              | - Evidence verification     |
+              | - Dependency revalidation   |
+              | - Failure analysis          |
+              +--------------+--------------+
+                             |
+                 +-----------+-----------+
+                 |                       |
+                 v                       v
+       +-------------------+   +-------------------+
+       | VERIFIED RESULT   |   | UNRESOLVED /      |
+       |                   |   | INVALID RESULT    |
+       | Reusable reasoning|   |                   |
+       | New knowledge     |   | Preserve evidence |
+       | Generalised rules |   | Track uncertainty |
+       +---------+---------+   +---------+---------+
+                 |                       |
+                 +-----------+-----------+
+                             |
+                             v
+              +-----------------------------+
+              | LOCAL REASONING JOURNAL     |
+              | - New derivations           |
+              | - Verification records      |
+              | - Failed reasoning paths    |
+              | - Experimental results      |
+              | - Pending contributions     |
+              +--------------+--------------+
+                             |
+                             v
+              +-----------------------------+
+              | SNAPSHOT / SYNC MANAGER     |
+              | - Content-addressed objects |
+              | - Deduplication             |
+              | - Immutable snapshots       |
+              | - Incremental updates       |
+              | - Signed commits            |
+              | - Conflict reconciliation   |
+              | - Optional P2P sharing      |
+              +--------------+--------------+
+                             |
+                             v
+                  GLOBAL SHARED CoK
 
----
 
-## 2. Chain of Thought (CoT) & Tree of Knowledge (ToK) Architecture
+==================================================
+1. REASONING PIPELINE
+==================================================
 
-This pipeline traces how a statement transitions from a single principle to a proven fact using first-principles deduction.
+Natural Language Input
+    |
+    v
+Neural Language Interpreter
+    |
+    v
+Structured Intermediate Representation (IR)
+    |
+    v
+Goal Decomposition
+    |
+    v
+Knowledge Retrieval
+    |
+    v
+Backward Chaining
+    |
+    v
+Premise and Constraint Resolution
+    |
+    v
+Forward Reasoning / Derivation Construction
+    |
+    v
+Verification
+    |
+    +---- VALID ----> Reusable Result
+    |
+    +---- INVALID --> Dependency Analysis
+    |                      |
+    |                      v
+    |                 Selective Repair
+    |                      |
+    |                      +--> Reasoning Retry
+    |
+    +---- UNKNOWN --> Record Uncertainty
+                           |
+                           v
+                     Further Research
 
-```
-[ Root Principle / Single Axiom ] 
-       │
-       ▼
-[ Algebraic Logic Parsing ] (Formulates the core thesis statement)
-       │
-       ▼
- ───[ Kiwix ZIM Library Lookup ] (RAG Retrieval Engine)
-       │
-       ├──> [ First Evidence Extracted ] (Verified facts from local archive)
-       │
-       ▼
-[ Chain of Thought / Linear Deductions ]
-       │
-       ├──> Deduction 1: Synthesize Root Principle + First Evidence
-       ├──> Deduction 2: Eliminate logical contradictions (Pure Logic)
-       └──> Deduction 3: Resolve algebraic constraints
-       │
-       ▼
-[ Tree of Knowledge Expansion ] (Branching alternative hypotheses)
-       │
-       ├──> Branch A: [ Valid Core Proof ] ──> (Syllogistic Validation)
-       └──> Branch B: [ Contradictory Path ] ──> [ PRUNED / REJECTED ]
-       │
-       ▼
-[ Pure Logic Synthesized Answer ] (Returned to User UI)
-```
 
----
+==================================================
+2. CHAIN OF KNOWLEDGE STRUCTURE
+==================================================
 
-## 3. Operational Mechanics
+CoK OBJECT TYPES:
 
-1. **Zero-Training Axiomatic Parsing:** The Sub-1B model does not store historical facts in its weights; it functions strictly as a grammar translator to build an Abstract Syntax Tree (AST) representing the query.
-2. **Deterministic Processing:** The reasoning engine operates on mathematical logic constraints, checking valid syntax structures rather than assigning soft statistical weights.
-3. **Detachable Grounding Store:** The local Kiwix ZIM archive acts as a static read-only database. It can be unmounted or hot-swapped without retraining any weights, ensuring zero external data dependencies.
+- CLAIM
+- FACT
+- RULE
+- ASSUMPTION
+- HYPOTHESIS
+- DERIVATION
+- EVIDENCE
+- GOAL
+- ACTION
+- EXPERIMENT
+- TEST_RESULT
+- CONTRADICTION
+
+CoK RELATIONSHIPS:
+
+- REQUIRES
+- IMPLIES
+- SUPPORTS
+- CONTRADICTS
+- DEPENDS_ON
+- PRODUCES
+- TESTS
+- ALTERNATIVE_TO
+
+EXAMPLE:
+
+Claim A --------+
+                |
+                +--> Rule R --> Conclusion C
+                |
+Claim B --------+
+
+Conclusion C ---+
+                |
+                +--> Rule S --> Conclusion E
+                |
+Claim D --------+
+
+Each derivation retains:
+- Globally stable object identifier
+- Premises
+- Applied inference rule
+- Assumptions and conditions
+- Supporting evidence
+- Source provenance
+- Verification status
+- Dependency references
+- Schema version
+
+KNOWLEDGE STATES:
+
+PROVISIONAL
+VERIFIED
+DISPUTED
+INVALIDATED
+UNRESOLVED
+ARCHIVED
+
+Verified derivations may become reusable premises.
+
+Invalidated derivations remain traceable.
+
+Unresolved derivations may be revisited when new
+evidence becomes available.
+
+Formal proof validity and empirical truth are
+tracked separately.
+
+
+==================================================
+3. MODULAR KNOWLEDGE ARCHITECTURE
+==================================================
+
+/gammathink/
+|
++-- sources/
+|   +-- wikipedia.zim
+|   +-- documentation.zim
+|   +-- research.zim
+|
++-- snapshots/
+|   +-- mathematics.gks
+|   +-- programming.gks
+|   +-- physics.gks
+|   +-- chemistry.gks
+|   +-- biology.gks
+|
++-- catalogue/
+|   +-- archive_registry
+|   +-- archive_versions
+|   +-- object_locations
+|
++-- indexes/
+|   +-- concepts
+|   +-- dependencies
+|   +-- conclusions
+|   +-- contradictions
+|
++-- local/
+|   +-- reasoning_journal
+|   +-- private_knowledge
+|   +-- pending_commits
+|
++-- cache/
+|   +-- active_objects
+|   +-- active_dependencies
+|
++-- sync/
+    +-- manifests
+    +-- incremental_updates
+    +-- verification_records
+
+ZIM ARCHIVES:
+- Compressed reference material
+- Read-only source knowledge
+- Independently mountable
+- Replaceable without changing the reasoning engine
+
+GKS SNAPSHOTS:
+- Compressed structured reasoning graphs
+- Immutable and versioned
+- Independently mountable
+- Hot-swappable
+- Content-addressed objects
+- Per-archive search indexes
+- Cross-archive dependency references
+- Integrity and compatibility checks
+
+LOCAL JOURNAL:
+- Writable database
+- New derivations
+- Local experiments
+- Verification results
+- Unpublished contributions
+
+The directory structure is logical.
+Archives may use packed binary storage rather
+than individual files.
+
+
+==================================================
+4. KNOWLEDGE RETRIEVAL ARCHITECTURE
+==================================================
+
+                  KNOWLEDGE QUERY
+                         |
+                         v
+                  QUERY PLANNER
+                         |
+                         v
+                 GLOBAL CATALOGUE
+                         |
+              +----------+----------+
+              |                     |
+              v                     v
+         EXACT LOOKUP         CONCEPT SEARCH
+              |                     |
+              +----------+----------+
+                         |
+                         v
+                   RAM CACHE
+                         |
+                    CACHE MISS
+                         |
+                         v
+                    LOCAL SSD
+                         |
+                    CACHE MISS
+                         |
+                         v
+                  REMOTE ARCHIVE
+                         |
+                         v
+                DEPENDENCY FETCH
+                         |
+                         v
+                  VERIFICATION
+                         |
+                         v
+                 REASONING ENGINE
+
+RETRIEVAL METHODS:
+
+- Exact object-ID lookup
+- Indexed concept search
+- Full-text search
+- Graph traversal
+- Dependency lookup
+- Contradiction lookup
+- Optional vector-based semantic retrieval
+
+OPTIMISATIONS:
+
+- Bounded RAM cache
+- Batch retrieval
+- Dependency prefetching
+- Compact graph representation
+- Disk-backed indexes
+- Memory-mapped immutable segments
+- Streaming query results
+- Locality-aware object packing
+
+
+==================================================
+5. MEMORY AND HARDWARE ARCHITECTURE
+==================================================
+
+TARGET HARDWARE:
+
+CPU:
+- General-purpose x86-64 / ARM64
+- No dedicated GPU required
+- Optional GPU acceleration
+
+RAM:
+- Target system: 8 GB
+- GammaThink target budget: <= 3 GB
+- Configurable memory limits
+
+STORAGE:
+- SSD-first architecture
+- Knowledge archives primarily disk-resident
+- RAM contains only active working data
+
+RAM COMPONENTS:
+
+- Neural interpreter
+- Active reasoning state
+- Search frontier
+- Bounded knowledge cache
+- Database buffers
+- Runtime overhead
+
+SSD COMPONENTS:
+
+- Kiwix archives
+- GKS snapshots
+- Reasoning journal
+- Persistent indexes
+- Historical derivations
+- Experimental evidence
+
+MEMORY POLICY:
+
+- Fixed configurable memory budget
+- Evict inactive cached objects
+- Preserve persistent objects on SSD
+- Bound search frontier size
+- Avoid loading complete archives
+- Track actual resident memory usage
+
+
+==================================================
+6. PARALLEL EXECUTION ARCHITECTURE
+==================================================
+
+                  REASONING GOAL
+                         |
+                         v
+                 DEPENDENCY ANALYSIS
+                         |
+                         v
+                    TASK SCHEDULER
+                         |
+            +------------+------------+
+            |            |            |
+            v            v            v
+         WORKER 1     WORKER 2     WORKER 3
+            |            |            |
+            +------------+------------+
+                         |
+                         v
+                 SHARED RESULT CACHE
+                         |
+                         v
+                 DEPENDENCY RESOLUTION
+                         |
+                         v
+                    VERIFICATION
+
+- Single-threaded correctness baseline
+- Optional multi-core execution
+- Work-stealing task scheduling
+- Independent branch parallelism
+- Shared memoisation
+- Constraint-based pruning
+- Configurable worker count
+- CPU, RAM and time budgets
+
+PERFORMANCE METRICS:
+
+- Correct solutions per unit of time
+- Reasoning expansions
+- Cache hit rate
+- SSD access latency
+- Network access latency
+- Peak memory consumption
+- CPU utilisation
+
+
+==================================================
+7. EXECUTION AND CODING AGENT
+==================================================
+
+USER REQUEST
+    |
+    v
+INTERPRETER
+    |
+    v
+GOAL / REQUIREMENT GRAPH
+    |
+    v
+KNOWLEDGE RETRIEVAL
+    |
+    v
+IMPLEMENTATION PLANNER
+    |
+    v
+PROGRAM SYNTHESIS / CODE GENERATION
+    |
+    v
+SANDBOXED EXECUTION
+    |
+    v
+COMPILATION / TESTING
+    |
+    +---- PASS --> VERIFIED RESULT
+    |
+    +---- FAIL --> ERROR ANALYSIS
+                       |
+                       v
+                  LOCAL REPAIR
+                       |
+                       +--> RE-TEST
+
+Execution records include:
+- Generated files
+- Commands
+- Compiler errors
+- Test results
+- Environment assumptions
+- Related reasoning dependencies
+
+Verified reusable solutions may be incorporated
+into the Chain of Knowledge.
+
+
+==================================================
+8. DISTRIBUTED KNOWLEDGE SYNCHRONISATION
+==================================================
+
+                 LOCAL GAMMATHINK
+                         |
+                         v
+                  LOCAL CoK JOURNAL
+                         |
+                         v
+                 CONTRIBUTION REVIEW
+                         |
+                         v
+                 CONTENT HASHING
+                         |
+                         v
+                   SIGNED COMMIT
+                         |
+                         v
+                  DISTRIBUTED CoK
+                         |
+              +----------+----------+
+              |                     |
+              v                     v
+        DEDUPLICATION        VERIFICATION
+              |                     |
+              +----------+----------+
+                         |
+                         v
+                LOGICAL RECONCILIATION
+                         |
+                         v
+                 INCREMENTAL SNAPSHOT
+                         |
+                         v
+                  OTHER INSTANCES
+
+SYNC PRINCIPLES:
+
+- Immutable content-addressed objects
+- Git-like commit history
+- Signed contribution metadata
+- Globally stable object identifiers
+- Canonicalisation where possible
+- Incremental snapshot updates
+- Independent verification
+- Contradiction preservation
+- Dependency-aware invalidation
+- Voluntary contribution
+- No automatic private-data uploads
+
+Storage merging does not imply logical agreement.
+
+Conflicting derivations remain available for
+further investigation.
+
+
+==================================================
+9. ONLINE AND OFFLINE MODES
+==================================================
+
+ONLINE MODE:
+
+Local interpreter
+       |
+Local reasoning engine
+       |
+Local cache / SSD
+       |
+Remote snapshot query
+       |
+Relevant dependency retrieval
+       |
+Reasoning and verification
+       |
+Local journal
+       |
+Optional contribution synchronisation
+
+
+OFFLINE MODE:
+
+Local interpreter
+       |
+Local reasoning engine
+       |
+Pre-downloaded ZIM archives
+       |
+Mounted GKS snapshots
+       |
+Local reasoning and verification
+       |
+Local journal
+       |
+Deferred synchronisation
+
+
+==================================================
+10. SNAPSHOT MAINTENANCE
+==================================================
+
+IMMUTABLE OBJECT STORE
+        |
+        v
+DEDUPLICATION
+        |
+        v
+INDEX REBUILDING
+        |
+        v
+COMPRESSION
+        |
+        v
+COLD STORAGE / ARCHIVING
+        |
+        v
+VERSIONED SNAPSHOT
+
+- Preserve evidence and provenance
+- Preserve contradictions
+- Preserve important failed reasoning paths
+- Archive rarely accessed objects
+- Avoid destructive deletion of unresolved evidence
+- Allow independent snapshot replacement
+- Maintain dependency references
+- Support schema version compatibility
+
+
+==================================================
+11. SCIENTIFIC DISCOVERY PIPELINE
+==================================================
+
+HUMAN EXPERIMENT / OBSERVATION
+              |
+              v
+       PUBLISHED DATA
+              |
+              v
+       KNOWLEDGE COMPILER
+              |
+              v
+       STRUCTURED EVIDENCE
+              |
+              v
+       CHAIN OF KNOWLEDGE
+              |
+              v
+       SYMBOLIC REASONING
+              |
+              v
+       NEW HYPOTHESIS
+              |
+              v
+       PROPOSED EXPERIMENT
+              |
+              v
+       HUMAN VERIFICATION
+              |
+              v
+       NEW KNOWLEDGE
+              |
+              +----> SHARED CoK
+
+Empirical discoveries require real-world
+verification and reproducible evidence.
+
+
+==================================================
+12. CORE SOFTWARE INTERFACES
+==================================================
+
+LanguageInterpreter
+    parse(input) -> IR
+
+GoalPlanner
+    decompose(IR) -> GoalGraph
+
+ReasoningEngine
+    solve(GoalGraph, Budget) -> ReasoningResult
+
+KnowledgeArchive
+    contains(ObjectId) -> bool
+    get(ObjectId) -> Object
+    search(Query) -> ObjectStream
+
+KnowledgeCompiler
+    compile(SourceDocument) -> KnowledgeObjects
+
+VerificationEngine
+    verify(Derivation) -> VerificationResult
+
+SnapshotManager
+    mount(Archive)
+    unmount(Archive)
+    resolve(ObjectId)
+    compile(Journal) -> Snapshot
+
+SyncManager
+    fetch(CommitRange)
+    validate(Commit)
+    merge(Commit)
+    publish(ApprovedContribution)
+
+ExecutionEngine
+    execute(ActionPlan) -> ExecutionResult
+
+
+==================================================
+13. DEVELOPMENT SEQUENCE
+==================================================
+
+PHASE 1
+- IR schema
+- CoK object schema
+- SQLite local journal
+- Basic graph storage
+
+PHASE 2
+- Symbolic reasoning engine
+- Backward and forward chaining
+- Dependency tracking
+- Verification and bounded search
+
+PHASE 3
+- Kiwix integration
+- Knowledge compiler
+- Unified retrieval engine
+- Source provenance
+
+PHASE 4
+- GKS snapshot format
+- Snapshot compiler
+- Indexes and archive mounting
+- Cross-archive dependency resolution
+
+PHASE 5
+- Neural interpreter integration
+- Goal planner
+- Coding agent
+- Execution and automated testing
+
+PHASE 6
+- Distributed synchronisation
+- Incremental updates
+- Content-addressed commits
+- Contradiction reconciliation
+
+PHASE 7
+- Parallel reasoning
+- Cache optimisation
+- Storage performance
+- Memory profiling
+- Large-scale benchmarks
+
+
+==================================================
+14. ARCHITECTURAL INVARIANTS
+==================================================
+
+- Neural interpretation and symbolic reasoning
+  remain separate.
+
+- CPU-only operation remains supported.
+
+- Knowledge archives remain disk-backed,
+  modular and hot-swappable.
+
+- Knowledge growth does not require proportional
+  growth in application RAM.
+
+- Every reusable derivation retains its
+  assumptions and dependencies.
+
+- Verification preserves evidence and provenance.
+
+- Contradictions are not silently overwritten.
+
+- Missing evidence is not equivalent to
+  evidence of falsity.
+
+- Failed search is not proof of impossibility.
+
+- Offline reasoning remains possible with
+  available local dependencies.
+
+- Distributed contributions require permission.
+
+- The reasoning graph can grow independently
+  of the neural model's weights.
+
+
+==================================================
+GAMMATHINK
+SMALL ENGINE.
+DISTRIBUTED KNOWLEDGE.
+ACCUMULATING REASONING.
+==================================================
