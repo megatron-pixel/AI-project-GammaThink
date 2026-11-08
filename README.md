@@ -4,9 +4,10 @@ There and big issues in the current world.The shortage of RAM is quite dire and 
 # Design 
 To check out the design, please refer to [AI Agent Architecture and topology](AI%20Agent%20Architecture%20and%20topology) file.
 
-##License & Terms of Use##
+# License & Terms of Use
 
 This project is licensed under the **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)** License.
+
 **Strictly Prohibited:** Commercial use or selling this software (including any modified versions).
 
 **Allowed:** Modifying, remixing, and sharing this software, *only if* the new versions are also shared for free under this same license.
