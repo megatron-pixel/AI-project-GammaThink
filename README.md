@@ -13,7 +13,7 @@ This project is licensed under the **Creative Commons Attribution-NonCommercial-
 **Allowed:** Modifying, remixing, and sharing this software, *only if* the new versions are also shared for free under this same license.
 
 **Technology,Data or Product resulting from Project GammaThink**
-Any resulting Technology,Data,Knowledge scientific or non-scientific may be commercialised.However, the designed product, theory and/or technology must be published to the open-source community in full detail with no omissions in any way, form or method.
+Any resulting Technology, Data and Knowledge,  scientific or non-scientific, may be commercialised.However, the designed product, theory and/or technology must be published to the open-source community in full detail with no omissions in any way, form or method.
 
 **Attribution:** Full credit must be given to the original author.
 For the full legal terms, please read the [LICENSE](LICENSE) file.
