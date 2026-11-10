@@ -1,160 +1,164 @@
 
-
 GAMMATHINK — AI AGENT ARCHITECTURE AND TOPOLOGY
-REVISION 2.5
+REVISION 2.6
 STATUS: PROPOSED ARCHITECTURE
 
 
 ==================================================
-1. SYSTEM TOPOLOGY
+1. COMPLETE SYSTEM TOPOLOGY
 ==================================================
 
-                   NATURAL LANGUAGE INPUT
-                            |
-                            v
-              +----------------------------+
-              | NEURAL LANGUAGE INTERPRETER|
-              | Small language model (<1B) |
-              | Natural language -> DSL/IR |
-              +-------------+--------------+
-                            |
-                            v
-              +----------------------------+
-              | GOAL DECOMPOSITION ENGINE  |
-              | Goals / subgoals           |
-              | Constraints                |
-              | Dependencies               |
-              | Success conditions         |
-              +-------------+--------------+
-                            |
-                            v
-              +----------------------------+
-              | SYMBOLIC REASONING ENGINE  |
-              | Backward chaining          |
-              | Forward inference          |
-              | Constraint solving         |
-              | Hypothesis generation      |
-              | Search / pruning           |
-              | Derivation reuse           |
-              +-------------+--------------+
-                            |
-                            v
-              +----------------------------+
-              | UNIFIED KNOWLEDGE ENGINE   |
-              | Query planning             |
-              | Indexed retrieval          |
-              | Dependency resolution      |
-              | Archive selection          |
-              | RAM / SSD caching          |
-              +-------------+--------------+
-                            |
-                            v
-              +----------------------------+
-              | VIRTUAL KNOWLEDGE DRIVE    |
-              | Local and remote mounts    |
-              | Archive abstraction        |
-              | On-demand block retrieval  |
-              | Writable local overlay     |
-              +-------------+--------------+
-                            |
-          +-----------------+-----------------+
-          |                 |                 |
-          v                 v                 v
-   +--------------+  +--------------+  +--------------+
-   | LOCAL SSD    |  | IPFS REMOTE  |  | REMOTE API   |
-   |              |  | DRIVE        |  | / PEERS      |
-   | ZIM archives |  |              |  |              |
-   | GKS snapshots|  | GKS snapshots|  | Graph query  |
-   | Local indexes|  | Index chunks |  | Commit sync  |
-   | Block cache  |  | Object chunks|  | Remote search|
-   +------+-------+  +------+-------+  +------+-------+
-          |                 |                 |
-          +-----------------+-----------------+
-                            |
-                            v
-              +----------------------------+
-              | KNOWLEDGE COMPILER         |
-              | Source interpretation      |
-              | Claim / rule extraction    |
-              | Evidence attribution       |
-              | Structured representation  |
-              +-------------+--------------+
-                            |
-                            v
-              +----------------------------+
-              | CHAIN OF KNOWLEDGE (CoK)   |
-              | Claims and premises        |
-              | Rules and derivations      |
-              | Directed hypergraph        |
-              | Evidence / provenance      |
-              | Contradiction tracking     |
-              | Reusable reasoning         |
-              +-------------+--------------+
-                            |
-                            v
-              +----------------------------+
-              | VERIFICATION ENGINE        |
-              | Proof checking             |
-              | Assumption validation      |
-              | Evidence assessment        |
-              | Dependency revalidation    |
-              | Failure analysis           |
-              +-------------+--------------+
-                            |
-               +------------+------------+
-               |                         |
-               v                         v
-       +------------------+     +------------------+
-       | VERIFIED RESULT  |     | UNRESOLVED /     |
-       |                  |     | INVALID RESULT   |
-       | Reusable proofs  |     |                  |
-       | Derived knowledge|     | Contradictions   |
-       | Validated actions|     | Failed attempts  |
-       +--------+---------+     +--------+---------+
-                |                        |
-                +------------+-----------+
+                    NATURAL LANGUAGE INPUT
                              |
                              v
-              +----------------------------+
-              | LOCAL REASONING JOURNAL    |
-              | New derivations            |
-              | Test / experiment results  |
-              | Verification metadata      |
-              | Pending contributions      |
-              +-------------+--------------+
-                            |
-                            v
-              +----------------------------+
-              | SNAPSHOT / SYNC MANAGER    |
-              | Content-addressed commits  |
-              | Immutable snapshots        |
-              | IPFS publishing            |
-              | Incremental updates        |
-              | Conflict reconciliation    |
-              | Optional P2P sharing       |
-              +-------------+--------------+
-                            |
-                            v
-                   DISTRIBUTED CoK
+              +-----------------------------+
+              | NEURAL LANGUAGE INTERPRETER |
+              | Small language model (<1B)  |
+              | Natural language -> DSL/IR  |
+              +--------------+--------------+
+                             |
+                             v
+              +-----------------------------+
+              | GOAL DECOMPOSITION ENGINE   |
+              | Goals and subgoals          |
+              | Constraints                 |
+              | Dependencies                |
+              | Success conditions          |
+              +--------------+--------------+
+                             |
+                             v
+              +-----------------------------+
+              | SYMBOLIC REASONING ENGINE   |
+              | Backward chaining           |
+              | Forward inference           |
+              | Constraint solving          |
+              | Hypothesis generation       |
+              | Proof search and pruning    |
+              | Reusable derivations        |
+              +--------------+--------------+
+                             |
+                             v
+              +-----------------------------+
+              | UNIFIED KNOWLEDGE ENGINE    |
+              | DSL parsing                 |
+              | Indexed retrieval           |
+              | Query planning              |
+              | Dependency resolution       |
+              | Cache management            |
+              +--------------+--------------+
+                             |
+                             v
+              +-----------------------------+
+              | VIRTUAL KNOWLEDGE DRIVE     |
+              | Local SSD mounts            |
+              | IPFS remote mounts          |
+              | Lazy block retrieval        |
+              | Writable local overlay      |
+              +--------------+--------------+
+                             |
+           +-----------------+-----------------+
+           |                 |                 |
+           v                 v                 v
+    +--------------+  +--------------+  +--------------+
+    | LOCAL SSD    |  | IPFS REMOTE  |  | REMOTE API   |
+    |              |  | DRIVE        |  | / PEERS      |
+    | ZIM sources  |  | GKS snapshots|  | Graph query  |
+    | GKS archives |  | Index chunks |  | Commit sync  |
+    | DSL objects  |  | Object chunks|  | Remote search|
+    | Local indexes|  | CID manifests|  |              |
+    +------+-------+  +------+-------+  +------+-------+
+           |                 |                 |
+           +-----------------+-----------------+
+                             |
+                             v
+              +-----------------------------+
+              | KNOWLEDGE COMPILER          |
+              | Source interpretation       |
+              | Claim / rule extraction     |
+              | DSL generation              |
+              | Evidence attribution        |
+              | Provenance preservation     |
+              +--------------+--------------+
+                             |
+                             v
+              +-----------------------------+
+              | CHAIN OF KNOWLEDGE (CoK)    |
+              | Structured DSL objects      |
+              | Directed hypergraph         |
+              | Claims / rules / premises   |
+              | Derivations / evidence      |
+              | Contradiction tracking      |
+              | Reusable reasoning          |
+              +--------------+--------------+
+                             |
+                             v
+              +-----------------------------+
+              | VERIFICATION ENGINE         |
+              | Proof checking              |
+              | Assumption validation       |
+              | Evidence assessment         |
+              | Dependency revalidation     |
+              | Failure analysis            |
+              +--------------+--------------+
+                             |
+              +--------------+--------------+
+              |                             |
+              v                             v
+    +-------------------+         +-------------------+
+    | VERIFIED RESULT   |         | UNRESOLVED /      |
+    |                   |         | INVALID RESULT    |
+    | Reusable proofs   |         |                   |
+    | Derived knowledge |         | Contradictions    |
+    | Validated actions |         | Failed attempts   |
+    +---------+---------+         +---------+---------+
+              |                             |
+              +--------------+--------------+
+                             |
+                             v
+              +-----------------------------+
+              | LOCAL REASONING JOURNAL     |
+              | New DSL objects             |
+              | New derivations             |
+              | Verification metadata       |
+              | Experimental results        |
+              | Pending contributions       |
+              +--------------+--------------+
+                             |
+              +--------------+--------------+
+              |                             |
+              v                             v
+    +-------------------+         +-------------------+
+    | HUMAN HYPERGRAPH  |         | SNAPSHOT / SYNC   |
+    | VISUALISER        |         | MANAGER           |
+    |                   |         |                   |
+    | Interactive graph |         | GKS compilation   |
+    | Reasoning chains  |         | IPFS publishing   |
+    | Evidence tracing  |         | Incremental sync  |
+    | Contradictions    |         | Signed commits    |
+    +-------------------+         +---------+---------+
+                                            |
+                                            v
+                                    DISTRIBUTED CoK
 
 
 ==================================================
 2. NEURAL LANGUAGE INTERPRETER
 ==================================================
 
-A compact sub-1B parameter language model maps
-natural-language requests into a structured
-intermediate representation.
+A compact sub-1B parameter model translates
+natural-language instructions into a structured
+intermediate representation (IR).
 
 RESPONSIBILITIES:
 
 - Intent identification
-- Entity and relationship extraction
+- Entity extraction
+- Relationship extraction
 - Goal identification
 - Constraint extraction
 - Ambiguity detection
-- Structured DSL/IR generation
-- Result explanation
+- DSL/IR generation
+- Human-readable result explanation
 
 EXAMPLE IR:
 
@@ -165,11 +169,11 @@ CONSTRAINT language = cpp
 CONSTRAINT offline_capable = true
 SUCCESS_CONDITION tests_pass = true
 
-The language model does not serve as the
-authoritative source of logical truth.
+The interpreter does not perform authoritative
+logical verification.
 
-Reasoning and verification remain separate
-from neural text generation.
+Reasoning and knowledge verification remain
+independent of neural text generation.
 
 
 ==================================================
@@ -184,15 +188,15 @@ Goal dependency graph
 
 FUNCTIONS:
 
-- Decompose complex tasks
-- Identify prerequisite goals
-- Establish dependency ordering
-- Identify parallelisable subgoals
+- Decompose complex goals
+- Identify prerequisite tasks
+- Determine execution order
+- Identify independent subgoals
 - Track assumptions
 - Define measurable success conditions
 - Detect missing requirements
 
-GOAL STRUCTURE:
+EXAMPLE:
 
 Goal A
   |
@@ -204,8 +208,8 @@ Goal A
         |
         +-- Goal E
 
-AND/OR relationships distinguish jointly
-required prerequisites from alternatives.
+AND/OR dependency structures distinguish
+joint requirements from alternative paths.
 
 
 ==================================================
@@ -216,7 +220,7 @@ CORE METHODS:
 
 - Backward chaining
 - Forward inference
-- First-principles deduction from explicit premises
+- First-principles deduction
 - Constraint propagation
 - Rule application
 - Hypothesis generation
@@ -255,7 +259,7 @@ VERIFICATION
   |
   +---- UNKNOWN --> UNRESOLVED KNOWLEDGE
 
-Reasoning is resource-bounded.
+Reasoning remains resource-bounded.
 
 Failure to find a proof does not establish
 that a proposition is impossible.
@@ -265,8 +269,8 @@ that a proposition is impossible.
 5. CHAIN OF KNOWLEDGE (CoK)
 ==================================================
 
-The CoK is a persistent directed graph /
-hypergraph of structured knowledge.
+The CoK is a persistent directed hypergraph
+represented through a structured knowledge DSL.
 
 OBJECT TYPES:
 
@@ -316,24 +320,321 @@ INVALIDATED
 UNRESOLVED
 ARCHIVED
 
-Each reusable derivation preserves:
+Every derivation preserves:
 - Premises
-- Inference rule
+- Applied inference rule
 - Assumptions
 - Supporting evidence
 - Source provenance
 - Verification status
 - Dependency references
 
-Formal validity and empirical truth are
-tracked independently.
+Formal logical validity and empirical truth
+are tracked independently.
 
 Contradictions and invalidated derivations
 remain traceable.
 
 
 ==================================================
-6. UNIFIED KNOWLEDGE ENGINE
+6. KNOWLEDGE DSL
+==================================================
+
+GammaThink uses a deterministic,
+machine-parsable Domain-Specific Language
+as its canonical logical representation.
+
+The knowledge base is not primarily
+a collection of natural-language paragraphs.
+
+Instead, it contains structured objects
+describing claims, entities, rules,
+relationships, evidence, and derivations.
+
+The DSL is shared between:
+
+- Neural language interpreter
+- Knowledge compiler
+- Symbolic reasoning engine
+- Verification engine
+- Snapshot compiler
+- Human graph visualiser
+
+The DSL describes logical knowledge
+independently of physical storage.
+
+GKS snapshots may store a compact binary
+encoding of the same logical structure.
+
+Human-readable DSL can be reconstructed
+from the binary representation when needed.
+
+The reasoning engine works with parsed
+knowledge objects rather than repeatedly
+interpreting natural-language descriptions.
+
+
+==================================================
+7. EXAMPLE KNOWLEDGE DSL
+==================================================
+
+CLAIM C001 {
+    SUBJECT: "water"
+    PROPERTY: "freezing_point"
+    VALUE: 0
+    UNIT: "celsius"
+    CONDITIONS: {
+        pressure: "1_atm"
+        substance: "pure_water"
+    }
+    STATUS: VERIFIED
+    EVIDENCE: [E001]
+}
+
+CLAIM C002 {
+    SUBJECT: "sample_A"
+    PROPERTY: "temperature"
+    VALUE: -5
+    UNIT: "celsius"
+    STATUS: VERIFIED
+    EVIDENCE: [E002]
+}
+
+RULE R001 {
+    NAME: "freezing_condition"
+    PREMISES: [C001, C002]
+    ADDITIONAL_CONDITIONS: [
+        "sample_A_is_pure_water",
+        "sample_A_pressure_is_1_atm",
+        "equilibrium_conditions_apply"
+    ]
+    CONCLUSION: C003
+}
+
+CLAIM C003 {
+    SUBJECT: "sample_A"
+    PROPERTY: "equilibrium_phase"
+    VALUE: "solid"
+    STATUS: PROVISIONAL
+}
+
+DERIVATION D001 {
+    PREMISES: [C001, C002]
+    RULE: R001
+    CONCLUSION: C003
+    ASSUMPTIONS: [
+        "sample_A_is_pure_water",
+        "sample_A_pressure_is_1_atm",
+        "equilibrium_conditions_apply"
+    ]
+    VERIFICATION: PENDING
+}
+
+This is illustrative DSL syntax.
+
+The final implementation requires a
+versioned grammar and deterministic parser.
+
+Empirical claims must distinguish measured
+facts, assumptions, and conditional rules.
+
+
+==================================================
+8. HYPERGRAPH REPRESENTATION
+==================================================
+
+The parsed DSL forms a directed,
+typed knowledge hypergraph.
+
+A hypergraph can represent relationships
+involving multiple premises simultaneously.
+
+EXAMPLE:
+
+       +-----------+       +-----------+
+       | CLAIM C001|       | CLAIM C002|
+       +-----+-----+       +-----+-----+
+             |                   |
+             +---------+---------+
+                       |
+                       v
+                +-------------+
+                | RULE R001   |
+                | DERIVATION  |
+                | D001        |
+                +------+------+
+                       |
+                       v
+                +-------------+
+                | CLAIM C003  |
+                +-------------+
+
+The derivation requires the combined
+premises and applicable conditions.
+
+It is not equivalent to independent
+binary implications from each premise.
+
+SUPPORTED STRUCTURES:
+
+- Multi-premise inference
+- Alternative derivations
+- Shared dependencies
+- Cross-domain relationships
+- Contradictory hypotheses
+- Evidence-to-claim relationships
+- Provenance tracing
+- Recursive dependency traversal
+- Multiple conclusions where applicable
+
+Each derivation is represented by an
+explicit relationship object or hyperedge.
+
+
+==================================================
+9. HUMAN HYPERGRAPH VISUALISER
+==================================================
+
+When requested by a human, GammaThink
+renders the structured knowledge DSL
+as an interactive hypergraph.
+
+The visualisation is generated from
+the underlying parsed knowledge.
+
+It is not a separate knowledge source.
+
+VISUALISATION PIPELINE:
+
+        GKS SNAPSHOT / DSL
+                 |
+                 v
+          DSL PARSER / DECODER
+                 |
+                 v
+         KNOWLEDGE OBJECT GRAPH
+                 |
+                 v
+         SUBGRAPH EXTRACTION
+                 |
+                 v
+          GRAPH LAYOUT ENGINE
+                 |
+                 v
+         INTERACTIVE HYPERGRAPH
+                 |
+                 v
+             HUMAN USER
+
+VISUAL NODES:
+
+- Claims
+- Facts
+- Rules
+- Assumptions
+- Evidence
+- Hypotheses
+- Derivations
+- Experiments
+
+VISUAL RELATIONSHIPS:
+
+- Logical implication
+- Premise dependencies
+- Evidence support
+- Contradictions
+- Rule applications
+- Alternative derivations
+
+NODE METADATA:
+
+- Verification status
+- Confidence / uncertainty metadata
+- Source provenance
+- Creation and revision history
+- Applicable assumptions
+- Related archive references
+
+
+==================================================
+10. INTERACTIVE REASONING EXPLORATION
+==================================================
+
+HUMAN INTERFACE FEATURES:
+
+- Zoom and pan
+- Expand / collapse reasoning branches
+- Inspect individual claims
+- Follow derivation dependencies
+- Display supporting evidence
+- Highlight contradictions
+- Compare alternative explanations
+- Trace conclusions back to premises
+- Filter by verification status
+- Explore cross-disciplinary relationships
+- Inspect original DSL
+- View human-readable explanations
+
+EXAMPLE:
+
+USER SELECTS CONCLUSION C003
+                 |
+                 v
+         DISPLAY DERIVATION D001
+                 |
+                 v
+          DISPLAY RULE R001
+                 |
+                 v
+       DISPLAY REQUIRED PREMISES
+                 |
+                 v
+         DISPLAY SOURCE EVIDENCE
+
+Users can inspect not only WHAT GammaThink
+concluded, but HOW and WHY it reached
+that conclusion.
+
+Verified premises, assumptions, and
+disputed evidence are visually distinct.
+
+The graph visualiser operates only when
+requested and is not required for
+normal symbolic reasoning.
+
+
+==================================================
+11. LARGE-SCALE GRAPH VISUALISATION
+==================================================
+
+The CoK may eventually contain extremely
+large numbers of knowledge objects.
+
+The visualiser must not load the
+entire knowledge graph into RAM.
+
+Instead, it uses:
+
+- Query-driven subgraph extraction
+- Lazy node expansion
+- Depth-limited traversal
+- Graph clustering
+- Collapsed dependency groups
+- Incremental rendering
+- Viewport-based rendering
+- Bounded visualisation memory
+
+Additional nodes are retrieved from
+local SSD or IPFS on demand.
+
+Graph layout is presentation-only.
+
+It does not change the underlying
+knowledge or logical validity.
+
+
+==================================================
+12. UNIFIED KNOWLEDGE ENGINE
 ==================================================
 
                   KNOWLEDGE QUERY
@@ -371,6 +672,9 @@ remain traceable.
                               OBJECT RETRIEVAL
                                      |
                                      v
+                             DSL PARSE / DECODE
+                                     |
+                                     v
                              DEPENDENCY RESOLUTION
                                      |
                                      v
@@ -399,11 +703,12 @@ OPTIMISATIONS:
 
 
 ==================================================
-7. VIRTUAL KNOWLEDGE DRIVE
+13. VIRTUAL KNOWLEDGE DRIVE
 ==================================================
 
-GammaThink exposes local and remote knowledge
-archives through one logical storage interface.
+GammaThink exposes local and remote
+knowledge archives through one logical
+storage interface.
 
                   VIRTUAL KNOWLEDGE DRIVE
                              |
@@ -442,15 +747,15 @@ Remote archives appear as logical mounts.
 
 IPFS mounts are read-only.
 
-New derivations are written to a local
-writable journal overlay.
+New derivations are written to a
+local writable journal overlay.
 
 Unmounting an archive marks unavailable
 dependencies without declaring them false.
 
 
 ==================================================
-8. KNOWLEDGE STORAGE LAYOUT
+14. KNOWLEDGE STORAGE LAYOUT
 ==================================================
 
 /gammathink/
@@ -504,15 +809,15 @@ dependencies without declaring them false.
 
 The layout is logical.
 
-IPFS mount paths do not imply that all
-remote files have been downloaded.
+IPFS mount paths do not imply that
+all remote files have been downloaded.
 
 Archives may be implemented as packed
 binary segments or embedded databases.
 
 
 ==================================================
-9. KIWIX ZIM SOURCE ARCHIVES
+15. KIWIX ZIM SOURCE ARCHIVES
 ==================================================
 
 PURPOSE:
@@ -542,7 +847,7 @@ claims and evidence with provenance.
 
 
 ==================================================
-10. GKS KNOWLEDGE SNAPSHOTS
+16. GKS KNOWLEDGE SNAPSHOTS
 ==================================================
 
 GKS = GammaThink Knowledge Snapshot
@@ -573,23 +878,27 @@ SNAPSHOT STRUCTURE:
        METADATA        INDEXES       OBJECT CHUNKS
           |              |              |
           v              v              v
-       Version         Object IDs      Claims
-       Schema          Concepts        Rules
-       Dependencies    Relationships   Derivations
-       Signatures      Conclusions     Evidence
+       Version         Object IDs      DSL Objects
+       Schema          Concepts        Claims
+       Dependencies    Relationships   Rules
+       Signatures      Conclusions     Derivations
+                                       Evidence
 
-Objects should be grouped into independently
+Objects are grouped into independently
 retrievable chunks.
 
-The snapshot format must support both
-local SSD access and IPFS block retrieval.
+The snapshot format supports local
+SSD access and IPFS block retrieval.
 
 A single monolithic compressed archive
-must not be required for small remote queries.
+must not be required for small queries.
+
+The logical DSL can be reconstructed
+from compiled snapshot objects.
 
 
 ==================================================
-11. IPFS REMOTE KNOWLEDGE DRIVE
+17. IPFS REMOTE KNOWLEDGE DRIVE
 ==================================================
 
 IPFS provides a content-addressed remote
@@ -633,7 +942,7 @@ IPFS TOPOLOGY:
                   HASH VALIDATION
                          |
                          v
-                   OBJECT DECODING
+                   DSL DECODING
                          |
                          v
                  KNOWLEDGE RETRIEVAL
@@ -660,7 +969,7 @@ across multiple independent hosts.
 
 
 ==================================================
-12. IPFS CONTENT ADDRESSING
+18. IPFS CONTENT ADDRESSING
 ==================================================
 
 Each published GKS snapshot has a root CID.
@@ -697,11 +1006,11 @@ An index maps knowledge object IDs to
 their containing IPFS blocks.
 
 CID integrity proves content identity,
-not the factual correctness of knowledge.
+not factual correctness.
 
 
 ==================================================
-13. IPFS LAZY RETRIEVAL
+19. IPFS LAZY RETRIEVAL
 ==================================================
 
 REMOTE KNOWLEDGE REQUEST
@@ -738,7 +1047,7 @@ VERIFY CONTENT HASH
 CACHE BLOCK ON SSD
            |
            v
-DECODE OBJECT
+DECODE DSL OBJECT
            |
            v
 PREFETCH DEPENDENCIES
@@ -763,12 +1072,12 @@ CACHE POLICIES:
 - Retrieval timeout limits
 - Network concurrency limits
 
-Remote snapshot indexing must avoid
-full-archive downloads for small queries.
+Remote indexing must avoid full-archive
+downloads for small queries.
 
 
 ==================================================
-14. LOCAL JOURNAL AND WRITABLE OVERLAY
+20. LOCAL JOURNAL AND WRITABLE OVERLAY
 ==================================================
 
               IMMUTABLE GKS SNAPSHOTS
@@ -789,6 +1098,7 @@ full-archive downloads for small queries.
 
 The local journal stores:
 
+- New DSL objects
 - New claims
 - New derivations
 - Hypotheses
@@ -810,7 +1120,7 @@ in place.
 
 
 ==================================================
-15. SNAPSHOT PUBLISHING
+21. SNAPSHOT PUBLISHING
 ==================================================
 
                   LOCAL JOURNAL
@@ -822,7 +1132,7 @@ in place.
                     VERIFICATION
                          |
                          v
-                 CANONICALISATION
+                 DSL CANONICALISATION
                          |
                          v
                    CHUNK COMPILER
@@ -858,11 +1168,11 @@ PUBLISHING RULES:
   at the application catalogue level.
 
 Previously published versions remain
-addressable while their blocks are available.
+addressable while blocks are available.
 
 
 ==================================================
-16. DISTRIBUTED CoK SYNCHRONISATION
+22. DISTRIBUTED CoK SYNCHRONISATION
 ==================================================
 
                  LOCAL GAMMATHINK
@@ -928,7 +1238,7 @@ merely because a newer commit exists.
 
 
 ==================================================
-17. MEMORY AND HARDWARE ARCHITECTURE
+23. MEMORY AND HARDWARE ARCHITECTURE
 ==================================================
 
 TARGET SYSTEM:
@@ -980,14 +1290,14 @@ MEMORY POLICY:
 - Compact identifiers
 
 Memory-mapped files still consume
-physical RAM when their pages are resident.
+physical RAM when resident.
 
-The 3 GB target must be validated with
-actual interpreter and reasoning workloads.
+The 3 GB target requires benchmarking
+with real interpreter and reasoning tasks.
 
 
 ==================================================
-18. PARALLEL REASONING ARCHITECTURE
+24. PARALLEL REASONING ARCHITECTURE
 ==================================================
 
                   REASONING GOAL
@@ -1036,7 +1346,7 @@ PERFORMANCE METRICS:
 
 
 ==================================================
-19. VERIFICATION ENGINE
+25. VERIFICATION ENGINE
 ==================================================
 
 VERIFICATION TYPES:
@@ -1072,8 +1382,8 @@ ASSESS EVIDENCE
     v
 ASSIGN VERIFICATION STATUS
 
-Verification records must remain
-traceable and versioned.
+Verification records remain traceable
+and versioned.
 
 A valid inference from uncertain premises
 does not automatically establish an
@@ -1081,7 +1391,7 @@ empirically true conclusion.
 
 
 ==================================================
-20. CODING AND EXECUTION AGENT
+26. CODING AND EXECUTION AGENT
 ==================================================
 
 USER REQUEST
@@ -1130,7 +1440,7 @@ from knowledge retrieval permissions.
 
 
 ==================================================
-21. ONLINE AND OFFLINE OPERATION
+27. ONLINE AND OFFLINE OPERATION
 ==================================================
 
 ONLINE MODE:
@@ -1189,7 +1499,7 @@ until connectivity is restored.
 
 
 ==================================================
-22. SNAPSHOT MAINTENANCE
+28. SNAPSHOT MAINTENANCE
 ==================================================
 
 IMMUTABLE OBJECT STORE
@@ -1229,7 +1539,7 @@ policies must preserve required blocks.
 
 
 ==================================================
-23. SCIENTIFIC DISCOVERY PIPELINE
+29. SCIENTIFIC DISCOVERY PIPELINE
 ==================================================
 
 HUMAN EXPERIMENT / OBSERVATION
@@ -1272,7 +1582,7 @@ real-world evidence and verification.
 
 
 ==================================================
-24. SECURITY AND TRUST
+30. SECURITY AND TRUST
 ==================================================
 
 STORAGE SECURITY:
@@ -1311,7 +1621,7 @@ about requested content.
 
 
 ==================================================
-25. CORE SOFTWARE INTERFACES
+31. CORE SOFTWARE INTERFACES
 ==================================================
 
 LanguageInterpreter
@@ -1319,6 +1629,10 @@ LanguageInterpreter
 
 GoalPlanner
     decompose(IR) -> GoalGraph
+
+KnowledgeDSLParser
+    parse(DSL) -> KnowledgeObjects
+    serialise(KnowledgeObjects) -> DSL
 
 ReasoningEngine
     solve(GoalGraph, Budget) -> ReasoningResult
@@ -1333,6 +1647,11 @@ KnowledgeCompiler
 
 VerificationEngine
     verify(Derivation) -> VerificationResult
+
+GraphVisualiser
+    render(Subgraph) -> InteractiveGraph
+    expand(ObjectId, Depth) -> Subgraph
+    trace(ObjectId) -> DerivationGraph
 
 StorageBackend
     read(BlockId) -> Block
@@ -1372,11 +1691,12 @@ ExecutionEngine
 
 
 ==================================================
-26. DEVELOPMENT SEQUENCE
+32. DEVELOPMENT SEQUENCE
 ==================================================
 
 PHASE 1:
 - IR schema
+- Knowledge DSL grammar
 - CoK object schema
 - SQLite local journal
 - Basic graph storage
@@ -1414,12 +1734,18 @@ PHASE 6:
 - Execution and testing
 
 PHASE 7:
+- Human hypergraph visualiser
+- Interactive reasoning exploration
+- Evidence and contradiction tracing
+- Lazy graph rendering
+
+PHASE 8:
 - Distributed synchronisation
 - Signed commits
 - Incremental snapshot updates
 - Conflict reconciliation
 
-PHASE 8:
+PHASE 9:
 - Parallel reasoning
 - Cache optimisation
 - Storage performance
@@ -1428,11 +1754,22 @@ PHASE 8:
 
 
 ==================================================
-27. ARCHITECTURAL INVARIANTS
+33. ARCHITECTURAL INVARIANTS
 ==================================================
 
 - Neural interpretation and symbolic reasoning
   remain independent.
+
+- Knowledge uses a deterministic,
+  machine-parsable DSL.
+
+- The CoK supports directed hypergraph
+  relationships.
+
+- Human visualisation is generated from
+  the same underlying knowledge objects.
+
+- Graph layout does not change logical meaning.
 
 - CPU-only operation remains supported.
 
@@ -1488,9 +1825,10 @@ PHASE 8:
 
 
 ==================================================
-GAMMATHINK — REVISION 2.5
+GAMMATHINK — REVISION 2.6
 
 SMALL ENGINE.
 DISTRIBUTED KNOWLEDGE.
 ACCUMULATING REASONING.
+HUMAN-INSPECTABLE INTELLIGENCE.
 ==================================================
