@@ -3,7 +3,7 @@ GAMMATHINK
 COMPLETE AI AGENT ARCHITECTURE AND SYSTEM TOPOLOGY
 
 REVISION: 2.9
-STATUS: CONSOLIDATED PROPOSED ARCHITECTURE
+STATUS: PROPOSED ARCHITECTURE
 
 DESIGN PHILOSOPHY:
   Local-first
@@ -11,7 +11,7 @@ DESIGN PHILOSOPHY:
   SSD-first
   Modular
   Persistent
-  Verifiable
+  Verifiable reasoning
   Resource-bounded
   Distributed where useful
   Human-inspectable
@@ -42,9 +42,9 @@ specialised components:
 4. A knowledge compiler converts external source
    material into candidate structured knowledge.
 
-5. A distributed knowledge system allows approved,
-   verified contributions to be shared between
-   GammaThink instances.
+5. A distributed knowledge system allows selected
+   contributions to be shared between GammaThink
+   instances.
 
 6. A local conversational memory system preserves
    session context and historical information even
@@ -62,11 +62,11 @@ on modest consumer hardware.
 
 The intended long-term outcome is a system that
 can reason over a growing body of knowledge,
-reuse verified derivations, identify gaps in its
+reuse derivations, identify gaps in its
 understanding and propose new hypotheses.
 
-This is an architectural objective, not a claim
-of achieved general intelligence.
+This is an architectural objective, not a
+claim of achieved general intelligence.
 
 
 ============================================================
@@ -165,12 +165,8 @@ of achieved general intelligence.
                      | Constraint solving  |
                      | Hypothesis testing  |
                      +----------+----------+
-                                ^
                                 |
-                     RELEVANT SUBGRAPHS
-                                |
-                                v
-                     KNOWLEDGE QUERIES
+                       KNOWLEDGE QUERY
                                 |
                                 v
                      +---------------------+
@@ -212,20 +208,19 @@ of achieved general intelligence.
                                 v
                      +---------------------+
                      | RELEVANT SUBGRAPH   |
-                     | RETURNED TO         |
-                     | SYMBOLIC REASONER   |
-                     +---------------------+
+                     +----------+----------+
+                                |
+                                +-----> BACK TO
+                                       SYMBOLIC
+                                       REASONER
 
-NOTE:
+The reasoner and knowledge engine form
+an iterative, bidirectional relationship.
 
-The reasoner and knowledge engine form a
-BIDIRECTIONAL, ITERATIVE relationship.
+The reasoner can issue multiple queries
+during one task.
 
-The reasoner may issue many queries during
-a single task.
-
-The knowledge engine is NOT simply a stage
-that runs once before reasoning.
+Knowledge retrieval is not a one-pass stage.
 
 
 ============================================================
@@ -287,8 +282,8 @@ ADDITIONAL EXIT CONDITIONS:
 These conditions produce explicit
 partial, unresolved or blocked results.
 
-They must not be misrepresented as
-proof that the goal is impossible.
+Failure to find a proof is not proof
+that a goal is impossible.
 
 
 ============================================================
@@ -326,7 +321,7 @@ proof that the goal is impossible.
      |                    |   |                    |
      | Inspect reasoning  |   | Original request   |
      | Trace evidence     |   | Session context    |
-     | Explore branches   |   | Verified result    |
+     | Explore branches   |   | Reasoning result   |
      +--------------------+   | Caveats / sources  |
                               +---------+----------+
                                         |
@@ -369,9 +364,9 @@ proof that the goal is impossible.
 Deterministic responses may bypass
 the explanation model entirely.
 
-The neural model must not silently
-invent verification results that the
-symbolic engine did not establish.
+The response generator receives
+the recorded reasoning result rather
+than reconstructing an independent proof.
 
 
 ============================================================
@@ -386,7 +381,7 @@ symbolic engine did not establish.
              | Technical documentation   |
              | Research publications     |
              | Structured datasets       |
-             | User-approved local files |
+             | Local files               |
              +-------------+-------------+
                            |
                            v
@@ -432,7 +427,6 @@ symbolic engine did not establish.
                  | Source provenance  |
                  | Evidence quality   |
                  | Contradictions     |
-                 | Trust policy       |
                  +---------+----------+
                            |
                            v
@@ -457,17 +451,8 @@ symbolic engine did not establish.
                  | GKS SNAPSHOT       |
                  +--------------------+
 
-IMPORTANT:
-
-Knowledge ingestion is independent of
-the interactive reasoning pipeline.
-
-The knowledge compiler does not have
-to wait for a user reasoning request.
-
-Source ingestion can run as a scheduled
-or manually initiated background job
-in a future implementation.
+Knowledge ingestion is independent
+of interactive reasoning.
 
 Source extraction is not equivalent
 to factual verification.
@@ -483,15 +468,13 @@ to factual verification.
                 +---------------------+
                 | CONTRIBUTION        |
                 | SELECTION           |
-                |                     |
-                | Explicit approval   |
-                | Privacy filtering   |
                 +----------+----------+
                            |
                            v
                 +---------------------+
-                | VERIFICATION AND    |
-                | DEPENDENCY REVIEW   |
+                | OBJECT VALIDATION   |
+                | AND DEPENDENCY      |
+                | RESOLUTION          |
                 +----------+----------+
                            |
                            v
@@ -508,9 +491,8 @@ to factual verification.
                            |
                            v
                 +---------------------+
-                | SIGNED MANIFEST     |
+                | VERSIONED MANIFEST  |
                 |                     |
-                | Publisher identity  |
                 | Snapshot version    |
                 | Schema version      |
                 | Dependencies        |
@@ -526,9 +508,8 @@ to factual verification.
                 +---------------------+
                 | GLOBAL CATALOGUE    |
                 |                     |
-                | Signed references   |
                 | Version discovery   |
-                | Publisher records   |
+                | Archive references  |
                 +----------+----------+
                            |
                  +---------+---------+
@@ -541,14 +522,11 @@ to factual verification.
                            v
                 +---------------------+
                 | UPDATE DISCOVERY    |
-                | Verify signatures   |
-                | Check trust policy  |
                 +----------+----------+
                            |
                            v
                 +---------------------+
                 | LAZY CONTENT FETCH  |
-                | Fetch needed chunks |
                 +----------+----------+
                            |
                            v
@@ -564,13 +542,13 @@ to factual verification.
                      EXPANDED CoK
 
 The global archive is a distributed
-collection of signed, versioned knowledge
+collection of versioned knowledge
 snapshots and contributions.
 
-It is not necessarily a single physical
-database controlled by one server.
+It is not necessarily a single
+physical database.
 
-Discovery, acceptance and replication
+Discovery, retrieval and acceptance
 are separate operations.
 
 
@@ -583,9 +561,6 @@ PURPOSE:
 Preserve conversational continuity and
 project context independently of the
 neural model's active context window.
-
-The system uses three complementary layers.
-
 
 LAYER 1: RECENT CONVERSATION
 ----------------------------
@@ -605,8 +580,6 @@ This layer prioritises exact wording.
 
 It is normally included automatically
 in each new context package.
-
-The window size is configurable.
 
 
 LAYER 2: PERSISTENT SESSION SUMMARY
@@ -731,13 +704,13 @@ unresolved_tasks
 updated_at
 
 Original conversation records remain
-available for reconstruction and review.
+available for reconstruction.
 
 Summaries are derived artefacts.
 
 Corrections may supersede earlier
-memories without silently rewriting
-the historical record.
+memories without rewriting the
+historical record.
 
 
 ============================================================
@@ -794,15 +767,9 @@ CONTEXT PRIORITY:
 The context package should include
 source identifiers where practical.
 
-Retrieved information is context,
-not automatically a trusted instruction.
-
 When memories conflict, the system
-should preserve the conflict and use
+preserves the conflict and applies
 explicit precedence rules.
-
-Unresolved ambiguity may require
-clarification rather than guessing.
 
 
 ============================================================
@@ -841,8 +808,8 @@ SUMMARISATION POLICY:
 - Unresolved tasks remain visible.
 - Source message references are kept.
 - Summaries can be regenerated.
-- Unsupported inferred memories should
-  not be promoted to confirmed facts.
+- Inferred memories remain distinguishable
+  from explicitly stated facts.
 
 The system should support very long
 conversation histories without requiring
@@ -1065,7 +1032,8 @@ LOW MEMORY:
   Unload immediately after inference.
 
 BALANCED:
-  Permit short idle retention when safe.
+  Permit short idle retention when
+  sufficient resources are available.
 
 HIGH PERFORMANCE:
   Keep models resident when sufficient
@@ -1168,7 +1136,7 @@ OUTPUT:
 - Success conditions
 - Clarification requirements
 
-The interpreter should not be the
+The interpreter is not the
 authoritative source of persistent
 knowledge or formal proof.
 
@@ -1194,11 +1162,6 @@ Measure:
 - Invalid-output rate
 - CPU latency
 - Peak memory usage
-
-Earlier small-model experiments
-motivated evaluating larger models
-rather than assuming that very small
-models are sufficient.
 
 
 ============================================================
@@ -1273,36 +1236,21 @@ hidden states.
 REASONING PROCESS:
 
 1. Select an active goal.
-
 2. Identify required premises.
-
 3. Query the knowledge engine.
-
 4. Retrieve a relevant subgraph.
-
 5. Match applicable rules.
-
-6. Apply valid inference steps.
-
+6. Apply inference steps.
 7. Record candidate derivations.
-
 8. Check constraints.
-
 9. Detect contradictions.
-
 10. Identify missing premises.
-
 11. Query again when useful.
-
 12. Explore alternative branches.
-
 13. Verify candidate proofs.
-
 14. Persist results and provenance.
-
 15. Stop when success, failure or
-    a configured resource limit
-    is reached.
+    a resource limit is reached.
 
 The exact search strategy remains
 an implementation decision.
@@ -1347,7 +1295,7 @@ CHECK ASSUMPTIONS
    v
 VERIFY CONCLUSION
 
-The system should distinguish:
+The system distinguishes:
 
 - Given facts
 - Assumed facts
@@ -1360,9 +1308,8 @@ A derivation may be logically valid
 while its premises are empirically
 uncertain or false.
 
-GammaThink should expose that
-distinction rather than treating
-all derived results as certain.
+That distinction is part of the
+reasoning architecture.
 
 
 ============================================================
@@ -1413,8 +1360,6 @@ KnowledgeResult query(
     const KnowledgeQuery& request
 );
 
-The result-completeness flag is important.
-
 A query interrupted by a timeout,
 missing IPFS block or resource limit
 must not be treated as evidence that
@@ -1428,9 +1373,9 @@ the requested knowledge does not exist.
 The CoK is a persistent typed,
 directed hypergraph.
 
-It stores both knowledge and
-the relationships that justify
-derived conclusions.
+It stores knowledge and the
+relationships used to derive
+conclusions.
 
 OBJECT TYPES:
 
@@ -1603,12 +1548,9 @@ DERIVATION D001 {
 This is illustrative syntax,
 not the final executable grammar.
 
-Physical conclusions depend on
-the exact rule semantics and
-applicable thermodynamic conditions.
-
 The production DSL must represent
-these conditions explicitly.
+applicable physical and logical
+conditions explicitly.
 
 
 ============================================================
@@ -1636,9 +1578,6 @@ EXAMPLE:
                          |
                          v
                     CLAIM D
-
-The conclusion depends on the
-combined premises.
 
 SUPPORTED STRUCTURES:
 
@@ -1741,8 +1680,8 @@ The user may explore only the
 portion of the knowledge graph
 relevant to a question.
 
-Graph rendering must respect
-the application's memory budget.
+Graph rendering respects the
+application's memory budget.
 
 
 ============================================================
@@ -1956,8 +1895,8 @@ LOCAL CoK
 
 ZIM content is source material.
 
-It is not automatically trusted
-or logically verified knowledge.
+It is not automatically verified
+knowledge.
 
 
 ============================================================
@@ -1975,7 +1914,7 @@ INPUTS:
 - Documents
 - Research material
 - Structured datasets
-- Approved local files
+- Local files
 
 OUTPUTS:
 
@@ -1999,7 +1938,7 @@ PROCESS:
 8. Serialise candidate DSL.
 9. Validate grammar and types.
 10. Submit for review.
-11. Persist approved objects.
+11. Persist resulting objects.
 
 Neural extraction may assist,
 but extracted content remains
@@ -2102,13 +2041,8 @@ back into human-readable DSL.
 IPFS provides content addressing
 and integrity verification.
 
-It does not guarantee:
-
-- Availability
-- Confidentiality
-- Factual correctness
-- Trusted authorship
-- Permanent storage
+It does not guarantee availability
+or factual correctness.
 
 Pinning and replication policies
 are required for important archives.
@@ -2132,8 +2066,6 @@ snapshot_version
 schema_version
 index_cids
 dependencies
-publisher_identity
-signature
 
 UPDATED CONTENT:
 
@@ -2219,10 +2151,9 @@ CACHE POLICIES:
 - Offline pinning
 - Timeout handling
 
-The reasoner should receive an
-explicit incomplete result when
-required remote blocks cannot
-be retrieved.
+The reasoner receives an explicit
+incomplete result when required
+remote blocks cannot be retrieved.
 
 
 ============================================================
@@ -2273,9 +2204,6 @@ LOCAL JOURNAL
 SELECT CONTRIBUTIONS
       |
       v
-CHECK PRIVACY AND APPROVAL
-      |
-      v
 VALIDATE OBJECTS
       |
       v
@@ -2297,17 +2225,10 @@ COMPUTE CONTENT ADDRESSES
 PUBLISH BLOCKS TO IPFS
       |
       v
-CREATE SIGNED ROOT MANIFEST
+CREATE VERSIONED ROOT MANIFEST
       |
       v
 UPDATE GLOBAL CATALOGUE
-
-Publication is explicit and
-subject to approval.
-
-Private conversational context
-must not be automatically
-included in public knowledge.
 
 Publishing and accepting
 knowledge are distinct actions.
@@ -2320,10 +2241,10 @@ knowledge are distinct actions.
 LOCAL GAMMATHINK
        |
        v
-APPROVED KNOWLEDGE COMMIT
+KNOWLEDGE COMMIT
        |
        v
-SIGNED MANIFEST
+VERSIONED MANIFEST
        |
        v
 IPFS PUBLICATION
@@ -2333,12 +2254,6 @@ CATALOGUE DISCOVERY
        |
        v
 REMOTE PEER
-       |
-       v
-VERIFY SIGNATURE
-       |
-       v
-CHECK TRUST POLICY
        |
        v
 FETCH MISSING CHUNKS
@@ -2366,17 +2281,14 @@ contradictory claims.
 The system should not silently
 overwrite one with another.
 
-Instead, it should preserve:
+Instead, it preserves:
 
-- Source identity
+- Source references
 - Evidence
 - Verification status
 - Publication history
 - Conflicting assertions
 - Alternative derivations
-
-Trust policy determines which
-claims may be used for a task.
 
 Logical reconciliation is not
 equivalent to choosing a single
@@ -2396,10 +2308,10 @@ NEW LOCAL KNOWLEDGE
 LOCAL VERIFICATION
     |
     v
-OPTIONAL APPROVED CONTRIBUTION
+KNOWLEDGE CONTRIBUTION
     |
     v
-SIGNED KNOWLEDGE COMMIT
+VERSIONED KNOWLEDGE COMMIT
     |
     v
 IPFS PUBLICATION
@@ -2416,9 +2328,6 @@ INSTANCE B           INSTANCE C
 DISCOVER UPDATE       DISCOVER UPDATE
     |                    |
     v                    v
-VERIFY MANIFEST       VERIFY MANIFEST
-    |                    |
-    v                    v
 FETCH AS NEEDED       FETCH AS NEEDED
     |                    |
     v                    v
@@ -2427,23 +2336,19 @@ RECONCILE CoK         RECONCILE CoK
 PROPOSED UPDATE POLICY:
 
 - Periodic catalogue checks
-- Signed version discovery
+- Version discovery
 - Incremental metadata updates
 - Lazy knowledge block fetching
 - Optional local pinning
-- Configurable publisher trust
-- Explicit upload approval
+- Configurable update scheduling
 
 The global archive evolves
 without retraining the neural
 language interpreter.
 
-Automatic discovery does not
-mean automatic acceptance.
-
-The exact catalogue governance,
-update cadence and trust protocol
-remain to be specified.
+The exact catalogue governance
+and update protocol remain
+to be specified.
 
 
 ============================================================
@@ -2486,7 +2391,7 @@ IMPLEMENTATION APPROACH:
 
 2. Introduce bounded worker pools.
 
-3. Use shared memoisation carefully.
+3. Use shared memoisation.
 
 4. Avoid duplicate subgoal work.
 
@@ -2496,8 +2401,8 @@ IMPLEMENTATION APPROACH:
 
 Parallel execution is optional.
 
-It must not compromise correctness
-or overwhelm low-memory hardware.
+It must not overwhelm
+low-memory hardware.
 
 
 ============================================================
@@ -2585,9 +2490,6 @@ IMPLEMENTATION PLAN
 CODE GENERATION
         |
         v
-SANDBOXED EXECUTION
-        |
-        v
 COMPILATION / TESTING
         |
         +-- SUCCESS --> VERIFIED RESULT
@@ -2603,21 +2505,12 @@ COMPILATION / TESTING
 The execution agent may use a
 neural code generator when required.
 
-Such model use must be coordinated
+Such model use is coordinated
 by the same resource manager.
 
-EXECUTION SAFETY:
-
-- Explicit permissions
-- Filesystem restrictions
-- Process limits
-- Network restrictions
-- Execution timeouts
-- Resource limits
-- Test result logging
-
-Generated code is not trusted
-until appropriately tested.
+Execution environments and permissions
+are implementation and deployment
+configuration concerns.
 
 
 ============================================================
@@ -2632,7 +2525,7 @@ ONLINE MODE:
 - Local GKS retrieval
 - Remote IPFS retrieval
 - Catalogue discovery
-- Optional contribution publishing
+- Knowledge contribution publishing
 - Optional remote query services
 
 OFFLINE MODE:
@@ -2649,7 +2542,7 @@ OFFLINE MODE:
 Offline reasoning quality depends
 on the knowledge available locally.
 
-Missing remote information must be
+Missing remote information is
 reported as unavailable rather
 than treated as false.
 
@@ -2683,9 +2576,8 @@ verification records.
 
 Failed reasoning attempts may
 be compacted according to a
-retention policy, but important
-failure evidence should remain
-traceable.
+retention policy, while important
+failure evidence remains traceable.
 
 
 ============================================================
@@ -2730,64 +2622,64 @@ that are not yet verified.
 Scientific conclusions require
 appropriate empirical testing.
 
-The architecture should distinguish
+The architecture distinguishes
 hypothesis generation from
 discovery confirmation.
 
 
 ============================================================
-45. SECURITY, PRIVACY AND TRUST
+45. CORE ENGINEERING REQUIREMENTS
 ============================================================
 
-LOCAL CONTEXT SECURITY:
+This section defines the technical
+requirements necessary for a reliable
+implementation of the architecture.
 
-- Local-first persistence
-- Session isolation
-- Source attribution
-- Optional encryption at rest
-- User-controlled retention
-- User-controlled deletion
-- No automatic public sharing
-- Prompt-injection-resistant
-  treatment of retrieved content
+SCHEMA CORRECTNESS:
 
-KNOWLEDGE SECURITY:
+- Deterministic parsing
+- Type validation
+- Reference validation
+- Schema versioning
+- Explicit error reporting
 
-- DSL schema validation
-- Type checking
-- Source provenance
-- Signed manifests
-- Publisher identity verification
-- Dependency checking
-- Contradiction preservation
-- Configurable trust policy
+RESOURCE MANAGEMENT:
 
-STORAGE SECURITY:
+- RAM ceilings
+- CPU budgeting
+- Timeouts
+- Bounded caches
+- Bounded search frontiers
+- Disk capacity monitoring
 
-- CID integrity verification
-- Archive size limits
-- Decompression limits
-- Cache quotas
-- Network timeouts
-- Safe parsing
-- Resource isolation
+STORAGE INTEGRITY:
 
-EXECUTION SECURITY:
+- Content hash verification
+- Database transactions
+- Snapshot consistency
+- Index consistency
+- Dependency tracking
 
-- Sandboxed code execution
-- Explicit permissions
-- Restricted filesystem access
-- Process resource limits
-- Network access controls
+RUNTIME RELIABILITY:
 
-IPFS content integrity does not
-establish factual correctness,
-publisher trust or confidentiality.
+- Build diagnostics
+- Crash reporting
+- Reproducible test cases
+- Failure recovery
+- Resource accounting
 
-Remote knowledge and retrieved
-documents must not gain authority
-to execute instructions merely
-because they were retrieved.
+OBSERVABILITY:
+
+- Model load/unload timing
+- Peak RSS
+- Retrieval latency
+- Reasoning search statistics
+- DSL validation results
+- Knowledge compilation metrics
+
+These requirements address
+implementation correctness,
+performance and reliability.
 
 
 ============================================================
@@ -2907,7 +2799,7 @@ SyncManager
   fetch(CommitRange)
   validate(Commit)
   merge(Commit)
-  publish(ApprovedContribution)
+  publish(Contribution)
 
 
 EXECUTION:
@@ -3007,7 +2899,7 @@ PHASE 8 — AGENT EXECUTION
 
 - Goal planning integration
 - Coding agent
-- Sandboxed execution
+- Execution environment integration
 - Compilation
 - Automated testing
 - Repair loop
@@ -3025,13 +2917,12 @@ PHASE 9 — HYPERGRAPH VISUALISATION
 
 PHASE 10 — DISTRIBUTED KNOWLEDGE
 
-- Signed manifests
-- Contribution approval
+- Versioned manifests
 - Incremental commits
 - Global catalogue
 - Update discovery
 - Conflict reconciliation
-- Trust policies
+- Distribution protocols
 
 
 PHASE 11 — PERFORMANCE AND SCALE
@@ -3093,93 +2984,87 @@ remain semantically distinct.
 
 RULE 7:
 
-Private conversation memory
-must not automatically become
-public global knowledge.
+Conversation memory and global
+knowledge use separate storage
+and semantic models.
 
 
 RULE 8:
-
-Global knowledge publication
-requires explicit approval.
-
-
-RULE 9:
 
 Knowledge retrieval must retain
 source provenance.
 
 
-RULE 10:
+RULE 9:
 
 Contradictions must not be
 silently overwritten.
 
 
-RULE 11:
+RULE 10:
 
 Verification must distinguish
 logical validity from
 empirical truth.
 
 
-RULE 12:
+RULE 11:
 
 The system must respect
 configurable memory, time,
 storage and network budgets.
 
 
-RULE 13:
+RULE 12:
 
 GKS snapshots must support
 partial retrieval without
 full archive decompression.
 
 
+RULE 13:
+
+IPFS is a storage and
+distribution layer, not an
+authority on truth.
+
+
 RULE 14:
-
-IPFS must be treated as a
-storage and distribution layer,
-not an authority on truth.
-
-
-RULE 15:
 
 Human graph visualisation
 must use the same underlying
 CoK objects as the reasoner.
 
 
-RULE 16:
+RULE 15:
 
 The system must support
 offline operation using
 available local resources.
 
 
-RULE 17:
+RULE 16:
 
 Global knowledge updates
 must not require retraining
 the neural interpreter.
 
 
-RULE 18:
+RULE 17:
 
 Original conversation messages
 must remain available for
-verification and reconstruction.
+reconstruction.
 
 
-RULE 19:
+RULE 18:
 
 Session summaries must not
 silently override newer
 explicit user corrections.
 
 
-RULE 20:
+RULE 19:
 
 Reasoning failure or incomplete
 retrieval must not be presented
@@ -3190,18 +3075,17 @@ as proof of impossibility.
 49. OPEN ENGINEERING DECISIONS
 ============================================================
 
-The following areas are deliberately
-left as engineering decisions.
-
 A. TASK IR GRAMMAR
 
 Exact schema, parser and
 validation rules.
 
+
 B. KNOWLEDGE DSL GRAMMAR
 
 Formal syntax, type system,
 canonical encoding and semantics.
+
 
 C. REASONING SEARCH POLICY
 
@@ -3209,27 +3093,32 @@ Premise selection, search ordering,
 pruning, stopping conditions and
 resource budgeting.
 
+
 D. CONTEXT RETRIEVAL POLICY
 
 Ranking formula, summary cadence,
 token allocation and optional
 embedding-model selection.
 
+
 E. KNOWLEDGE COMPILATION QUALITY
 
 Extraction reliability, provenance
 standards and validation thresholds.
+
 
 F. GKS FILE FORMAT
 
 Chunk layout, index encoding,
 compression and version migration.
 
-G. GLOBAL TRUST MODEL
 
-Publisher identity, governance,
-signature verification, revocation
-and conflict acceptance policies.
+G. GLOBAL UPDATE PROTOCOL
+
+Catalogue structure, version
+discovery, update scheduling
+and conflict reconciliation.
+
 
 H. MODEL SELECTION
 
@@ -3237,25 +3126,24 @@ Best interpreter model for
 structured Task IR generation
 under measured resource limits.
 
+
 I. MEMORY VALIDATION
 
 Prove or revise the target of
 approximately 3 GB resident RAM.
+
 
 J. DISTRIBUTED AVAILABILITY
 
 Pinning, replication and recovery
 policies for important snapshots.
 
-K. SECURITY IMPLEMENTATION
 
-Sandbox design, local encryption,
-permissions and safe parsing.
+K. EXECUTION IMPLEMENTATION
 
-These decisions should be resolved
-through specifications, prototypes
-and measured tests rather than
-assumptions.
+Process management, resource
+accounting, error handling and
+reproducible testing.
 
 
 ============================================================
@@ -3294,23 +3182,21 @@ GammaThink must preserve:
 - Virtual knowledge drive
 - Optional IPFS remote mounts
 - Lazy content retrieval
-- Signed knowledge manifests
+- Versioned knowledge manifests
 - Incremental global updates
-- Voluntary contribution sharing
-- Configurable trust policies
+- Knowledge contribution sharing
 - Optional human graph visualisation
-- Sandboxed coding and execution
+- Coding and execution agent
 - Online and offline operation
 - Optional parallel reasoning
 - Verifiable knowledge growth
-- No automatic private-data publishing
 - No requirement to retrain the
   interpreter for knowledge updates
 
 ============================================================
 
 GAMMATHINK — REVISION 2.9
-CONSOLIDATED MASTER ARCHITECTURE
+MASTER ARCHITECTURE
 
 THREE-LAYER PERSISTENT LOCAL MEMORY.
 

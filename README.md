@@ -18,3 +18,6 @@ Any resulting Technology, Data and Knowledge,  scientific or non-scientific, may
 **Attribution:** Full credit must be given to the original author.
 For the full legal terms, please read the [LICENSE](LICENSE) file.
 
+# Developing & Testing Usage Recommendations
+
+**Recommended Safety Procedures**Sandboxing the model in a docker or container during testing.
