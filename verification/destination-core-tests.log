@@ -1,0 +1,125 @@
+Start testing: Nov 17 17:46 +08
+----------------------------------------------------------
+1/7 Testing: core-test
+1/7 Test: core-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/core-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"core-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+core tests passed: 4607 deterministic assertions
+<end of output>
+Test time =   0.42 sec
+----------------------------------------------------------
+Test Passed.
+"core-test" end time: Nov 17 17:46 +08
+"core-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/7 Testing: relational-test
+2/7 Test: relational-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/relational-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"relational-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+relational tests: 7128 checks passed
+<end of output>
+Test time =   0.98 sec
+----------------------------------------------------------
+Test Passed.
+"relational-test" end time: Nov 17 17:46 +08
+"relational-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/7 Testing: binary-dispatch-test
+3/7 Test: binary-dispatch-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/binary-dispatch-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"binary-dispatch-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+BINARY_DISPATCH_TEST_OK legacy_bytes_unchanged=true relational_checked=true problem_checked=true
+<end of output>
+Test time =   0.32 sec
+----------------------------------------------------------
+Test Passed.
+"binary-dispatch-test" end time: Nov 17 17:46 +08
+"binary-dispatch-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/7 Testing: problem-input-test
+4/7 Test: problem-input-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/problem-input-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"problem-input-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+PROBLEM_INPUT_TEST_OK checks=58
+<end of output>
+Test time =   0.32 sec
+----------------------------------------------------------
+Test Passed.
+"problem-input-test" end time: Nov 17 17:46 +08
+"problem-input-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/7 Testing: problem-test
+5/7 Test: problem-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/problem-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"problem-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+PROBLEM_INTEGRATION_TEST_OK checks=946 independent_quantity_oracles=432
+<end of output>
+Test time =   0.69 sec
+----------------------------------------------------------
+Test Passed.
+"problem-test" end time: Nov 17 17:46 +08
+"problem-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/7 Testing: problem-wire-test
+6/7 Test: problem-wire-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/problem-wire-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"problem-wire-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+problem wire tests passed: 14306 checks
+<end of output>
+Test time =   1.03 sec
+----------------------------------------------------------
+Test Passed.
+"problem-wire-test" end time: Nov 17 17:46 +08
+"problem-wire-test" time elapsed: 00:00:01
+----------------------------------------------------------
+
+7/7 Testing: direct-graph-cli
+7/7 Test: direct-graph-cli
+Command: "/Users/joey/.omo/agent/bundled-bun/35274930248aeb03/bun" "test" "./tests/direct_graph_cli.test.mjs"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"direct-graph-cli" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+bun test v1.4.2 (744846f84)
+
+tests/direct_graph_cli.test.mjs:
+(pass) recursive relational DSL produces the same checked graph through binary transport [346.03ms]
+(pass) removing either jointly necessary premise changes the direct graph outcome [14.35ms]
+(pass) explicit conflicting evidence preserves both roots without inventing missing facts [7.71ms]
+
+ 3 pass
+ 0 fail
+ 21 expect() calls
+Ran 3 tests across 1 file. [373.00ms]
+<end of output>
+Test time =   0.38 sec
+----------------------------------------------------------
+Test Passed.
+"direct-graph-cli" end time: Nov 17 17:46 +08
+"direct-graph-cli" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 17 17:46 +08

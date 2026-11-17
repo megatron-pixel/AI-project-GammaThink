@@ -1,0 +1,130 @@
+cmake_minimum_required(VERSION 3.24)
+project(GammaThink VERSION 2.9 LANGUAGES CXX)
+
+option(GAMMATHINK_WITH_MODEL_RUNTIME "Enable externally supplied llama.cpp runtime" OFF)
+option(GAMMATHINK_CORE_ONLY "Build only the formal reasoning core and its tests" OFF)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+# Existing CLI fixtures locate their sibling programs in source-root/build.
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/build")
+foreach(config DEBUG RELEASE RELWITHDEBINFO MINSIZEREL)
+  set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_${config} "${PROJECT_SOURCE_DIR}/build")
+endforeach()
+add_compile_options(-Wall -Wextra -Wpedantic -Werror)
+
+find_package(PkgConfig REQUIRED)
+find_package(Threads REQUIRED)
+pkg_check_modules(GMP REQUIRED IMPORTED_TARGET gmpxx)
+pkg_check_modules(CRYPTO REQUIRED IMPORTED_TARGET libcrypto)
+# FindPkgConfig imported targets expose external headers as SYSTEM includes.
+
+file(GLOB core_sources CONFIGURE_DEPENDS components/reasoning-core/src/*.cpp)
+add_library(gammathink_core STATIC ${core_sources})
+target_include_directories(gammathink_core PUBLIC components/reasoning-core/include)
+target_link_libraries(gammathink_core PUBLIC PkgConfig::GMP PkgConfig::CRYPTO)
+
+add_executable(axiom apps/reasoning_core_main.cpp)
+target_link_libraries(axiom PRIVATE gammathink_core)
+if(GAMMATHINK_CORE_ONLY)
+  include(CTest)
+  if(BUILD_TESTING)
+    foreach(test core relational binary_dispatch problem_input problem problem_wire)
+      string(REPLACE "_" "-" name "${test}-test")
+      add_executable(${name} "tests/${test}_test.cpp")
+      target_link_libraries(${name} PRIVATE gammathink_core)
+      add_test(NAME ${name} COMMAND $<TARGET_FILE:${name}>)
+      set_tests_properties(${name} PROPERTIES WORKING_DIRECTORY "${PROJECT_SOURCE_DIR}" TIMEOUT 120)
+    endforeach()
+    find_program(BUN_EXECUTABLE bun)
+    if(BUN_EXECUTABLE)
+      add_test(NAME direct-graph-cli
+        COMMAND "${BUN_EXECUTABLE}" test ./tests/direct_graph_cli.test.mjs)
+      set_tests_properties(direct-graph-cli PROPERTIES WORKING_DIRECTORY "${PROJECT_SOURCE_DIR}" TIMEOUT 120)
+    endif()
+  endif()
+  return()
+endif()
+pkg_check_modules(PRODUCTION REQUIRED IMPORTED_TARGET
+  libzim libxml-2.0 libcurl json-c sqlite3 libzstd)
+
+set(component_names
+  knowledge-graph reasoning-orchestration memory knowledge-dsl knowledge-ingestion
+  snapshots virtual-drive agent-execution graph-viewer distribution
+  interpreter-interfaces acceleration)
+if(GAMMATHINK_WITH_MODEL_RUNTIME)
+  include(cmake/ModelRuntime.cmake)
+  list(APPEND component_names model-manager)
+endif()
+
+set(component_includes
+  "${PROJECT_SOURCE_DIR}/components/reasoning-core/include"
+  "${PROJECT_SOURCE_DIR}/contracts/knowledge-dsl/include"
+  "${PROJECT_SOURCE_DIR}/contracts/native-goals/include")
+foreach(component IN LISTS component_names)
+  list(APPEND component_includes "${PROJECT_SOURCE_DIR}/components/${component}/include")
+endforeach()
+
+set(runtime_sources
+  execution.cpp task_code.cpp task_generation.cpp task_operators.cpp task_refinement.cpp
+  task_reviews.cpp task_session.cpp task_source.cpp experiments.cpp maintenance_scheduler.cpp)
+set(component_objects)
+foreach(component IN LISTS component_names)
+  string(REPLACE "-" "_" target "gammathink_${component}")
+  file(GLOB sources CONFIGURE_DEPENDS "components/${component}/src/*.cpp")
+  if(NOT GAMMATHINK_WITH_MODEL_RUNTIME)
+    foreach(source IN LISTS sources)
+      get_filename_component(filename "${source}" NAME)
+      if(filename IN_LIST runtime_sources)
+        list(REMOVE_ITEM sources "${source}")
+      endif()
+    endforeach()
+  endif()
+  add_library(${target} OBJECT ${sources})
+  target_include_directories(${target} PUBLIC ${component_includes})
+  target_link_libraries(${target} PRIVATE
+    gammathink_core PkgConfig::PRODUCTION Threads::Threads)
+  if(GAMMATHINK_WITH_MODEL_RUNTIME)
+    target_link_libraries(${target} PRIVATE gammathink_model_runtime)
+  endif()
+  list(APPEND component_objects "$<TARGET_OBJECTS:${target}>")
+endforeach()
+
+foreach(contract knowledge-dsl native-goals)
+  string(REPLACE "-" "_" target "gammathink_contract_${contract}")
+  file(GLOB sources CONFIGURE_DEPENDS "contracts/${contract}/src/*.cpp")
+  add_library(${target} OBJECT ${sources})
+  target_include_directories(${target} PUBLIC ${component_includes})
+  target_link_libraries(${target} PRIVATE gammathink_core PkgConfig::PRODUCTION)
+  list(APPEND component_objects "$<TARGET_OBJECTS:${target}>")
+endforeach()
+
+add_library(gammathink_components STATIC ${component_objects})
+target_include_directories(gammathink_components PUBLIC ${component_includes})
+target_link_libraries(gammathink_components PUBLIC gammathink_core
+  PkgConfig::PRODUCTION Threads::Threads ${CMAKE_DL_LIBS})
+if(GAMMATHINK_WITH_MODEL_RUNTIME)
+  target_link_libraries(gammathink_components PUBLIC gammathink_model_runtime)
+endif()
+
+function(gammathink_app target source)
+  add_executable(${target} "apps/${source}")
+  target_link_libraries(${target} PRIVATE gammathink_components)
+endfunction()
+gammathink_app(gammathink runtime_main.cpp)
+gammathink_app(knowledge-inspect inspection_main.cpp)
+gammathink_app(knowledge-catalogue catalogue_main.cpp)
+gammathink_app(knowledge-contribute contribution_main.cpp)
+gammathink_app(knowledge-maintain maintenance_main.cpp)
+gammathink_app(knowledge-task-plan task_plan_main.cpp)
+if(GAMMATHINK_WITH_MODEL_RUNTIME)
+  add_executable(execution-helper apps/execution_helper.cpp)
+  gammathink_app(gammathink-session session_main.cpp)
+  add_dependencies(gammathink-session execution-helper)
+endif()
+
+include(CTest)
+if(BUILD_TESTING)
+  include(cmake/ProductionTests.cmake)
+endif()

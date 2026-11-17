@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="GammaThink evidence viewer component states.">
+  <title>Evidence viewer primitives</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="showcase">
+  <main class="stack">
+    <header class="stack">
+      <p class="meta">GammaThink / Design verification</p>
+      <h1>Primitive states</h1>
+      <p>Component fixtures only. These labels are not knowledge claims or measured reasoning results.</p>
+    </header>
+    <div class="showcase-grid">
+      <section class="panel stack" aria-labelledby="actions">
+        <h2 id="actions">Actions</h2>
+        <div class="cluster">
+          <button class="primary">Inspect</button>
+          <button>Fit diagram</button>
+          <button disabled>Unavailable</button>
+          <button aria-busy="true" disabled>Reading objects...</button>
+          <button aria-pressed="true">Selected &#10003;</button>
+        </div>
+        <p class="error" role="status">The object could not be read. Check its source, then inspect it again.</p>
+      </section>
+      <section class="panel stack" aria-labelledby="fields">
+        <h2 id="fields">Fields</h2>
+        <div><label for="empty">Object ID</label><input id="empty" placeholder="64 hexadecimal characters"></div>
+        <div><label for="filled">Search labels and concepts</label><input id="filled" value="Joint premises"></div>
+        <div><label for="invalid">Invalid object ID</label><input id="invalid" value="short-id" aria-invalid="true" aria-describedby="id-error"><p id="id-error" class="error">Enter the complete 64-character object ID.</p></div>
+        <div><label for="theme">Theme</label><select id="theme"><option>System</option><option>Light</option><option>Dark</option></select></div>
+      </section>
+      <section class="panel stack" aria-labelledby="states">
+        <h2 id="states">Independent states</h2>
+        <div class="cluster">
+          <span class="tag valid">Logical: valid</span>
+          <span class="tag conflict">Evidence: conflicting</span>
+          <span class="tag unknown">Dependency unavailable</span>
+          <span class="tag">Private view</span>
+        </div>
+        <p>A valid derivation can still have disputed premises. Missing information is not false.</p>
+      </section>
+      <section class="panel stack" aria-labelledby="nodes">
+        <h2 id="nodes">Knowledge nodes</h2>
+        <button class="node"><span class="node-kind">Derivation</span><span class="node-label">Joint premises remain grouped</span><code class="meta">Fixture A</code></button>
+        <button class="node" aria-pressed="true"><span class="node-kind">Selected &#10003;</span><span class="node-label">An intentionally long source label that wraps without changing the surrounding layout</span><code class="meta">Fixture B</code></button>
+        <button class="node"><span class="node-kind">Contradiction</span><span class="node-label">Evidence disagrees</span><span class="tag conflict">Conflict</span></button>
+      </section>
+      <section class="panel stack" aria-labelledby="disclosures">
+        <h2 id="disclosures">Structured inspection</h2>
+        <details open><summary>Joint prerequisites</summary><ol><li>Premise occurrence 1</li><li>Premise occurrence 2</li><li>Repeated premise occurrence 3</li></ol></details>
+        <details><summary>Source provenance</summary><p>Archive version, entry path, digest and exact source span.</p></details>
+        <details open><summary>Raw data</summary><pre>Text is selectable. Unbroken paths wrap:
+/a/very/long/source/path/that/must/not/force/the/page/to/scroll/horizontally/0123456789abcdef0123456789abcdef</pre></details>
+      </section>
+      <section class="panel stack" aria-labelledby="empty-state">
+        <h2 id="empty-state">Empty and unavailable</h2>
+        <p>No object has been selected.</p>
+        <p class="meta">Enter an object ID or search the configured local knowledge sources.</p>
+        <button>Inspect an object</button>
+        <span class="tag unknown">Dependency unavailable</span>
+        <p class="meta">This dependency is not available in the configured sources.</p>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

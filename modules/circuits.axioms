@@ -1,0 +1,8 @@
+# A finite idealized circuit instance. No empirical guarantees about real wiring.
+axioms 1 ideal_circuit 1.0
+fact battery.charged | Model assumption: the ideal battery is charged.
+fact switch.closed | Model assumption: the ideal switch is closed.
+fact wire.intact | Model assumption: the ideal wire is intact.
+rule loop.ready -> lamp.on | Ideal circuit definition: a ready loop lights the lamp.
+rule battery.charged & switch.closed & wire.intact -> loop.ready | Ideal series-circuit assumption.
+rule lamp.on -> sensor.bright | Model assumption: the ideal sensor detects the lamp.

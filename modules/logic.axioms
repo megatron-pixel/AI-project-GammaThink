@@ -1,0 +1,7 @@
+# Conditional demonstration axioms, not claims extracted from a library.
+axioms 1 logic_demo 1.0
+fact socrates.human | Demonstration premise: Socrates is human.
+rule socrates.human -> socrates.mortal | Demonstration ground instance of human implies mortal.
+rule socrates.mortal -> socrates.finite_life | Demonstration definition of mortal.
+fact stone.inanimate | Demonstration premise: this stone is inanimate.
+rule stone.inanimate -> !stone.alive | Demonstration classification assumption.

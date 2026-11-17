@@ -1,0 +1,7 @@
+axioms 1 branching_demo 1.0
+rule detour -> destination | First branch depends on a cycle.
+rule destination -> detour | The cycle alone supplies no evidence.
+rule missing -> destination | Second branch lacks a premise.
+rule start & bridge -> destination | Third branch closes over two explicit premises.
+fact start | Demonstration starting assumption.
+fact bridge | Demonstration bridge assumption.

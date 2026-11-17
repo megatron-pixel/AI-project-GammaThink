@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Inspect GammaThink knowledge objects, joint derivations, contradictions and exact source provenance in a private local view.">
+  <title>Evidence graph - GammaThink</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.mjs"></script>
+</head>
+<body class="app" data-initializing>
+  <a class="skip-link" href="#inspector">Skip to object details</a>
+  <header class="app-header cluster">
+    <div><p class="meta">GammaThink</p><h1>Evidence graph</h1></div>
+    <span class="tag">Read-only private view</span>
+    <div class="theme-field"><label for="theme">Theme</label><select id="theme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></div>
+  </header>
+  <section class="tools" aria-label="Knowledge navigation">
+    <form id="object-form" class="cluster">
+      <div class="field"><label for="object-id">Graph root object ID</label><input id="object-id" class="mono" autocomplete="off" spellcheck="false" placeholder="64 hexadecimal characters" aria-describedby="read-error"></div>
+      <button id="inspect" class="primary" data-read>Inspect</button>
+    </form>
+    <form id="search-form" class="cluster">
+      <div class="field"><label for="search">Search labels and indexed text</label><input id="search" autocomplete="off" placeholder="Literal phrase in configured local sources"></div>
+      <button data-read>Search</button>
+    </form>
+  </section>
+  <div class="read-bar">
+    <div class="cluster"><p id="read-status" class="meta" role="status">Opening the local knowledge view...</p><button id="cancel" hidden>Cancel read</button></div>
+    <p id="read-error" class="error" role="alert" hidden></p>
+  </div>
+  <main class="workspace">
+    <section class="diagram" aria-labelledby="diagram-title">
+      <header class="diagram-toolbar cluster">
+        <h2 id="diagram-title">Recorded relations</h2>
+        <div class="cluster" role="group" aria-label="Diagram controls">
+          <button id="zoom-out" aria-label="Zoom out" title="Zoom out">-</button>
+          <span id="zoom-value" class="meta">100%</span>
+          <button id="zoom-in" aria-label="Zoom in" title="Zoom in">+</button>
+          <button id="fit">Fit</button>
+        </div>
+      </header>
+      <div id="board" tabindex="0" role="region" aria-label="Knowledge diagram" aria-describedby="diagram-help">
+        <svg class="edges-layer" aria-hidden="true">
+          <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z"></path></marker></defs>
+          <g id="edges"></g>
+        </svg>
+        <div id="nodes" class="nodes-layer"></div>
+      </div>
+      <footer class="diagram-caption stack">
+        <p id="diagram-count" class="meta">No objects loaded.</p>
+        <p id="diagram-help" class="meta">Drag to pan; wheel or +/- to zoom. With the diagram focused, arrow keys pan and 0 fits. Arrows summarize recorded relationships. View groups open full ordered data.</p>
+      </footer>
+    </section>
+    <aside id="inspector" class="inspector stack" aria-labelledby="detail-title" tabindex="-1">
+      <header class="stack"><h2 id="detail-title">Object details</h2><p id="selection-context" class="meta break">No object selected.</p></header>
+      <section id="detail" class="stack" aria-live="off"><p>Select an object in the diagram or enter its exact ID.</p></section>
+      <details id="incoming">
+        <summary>Incoming relationships</summary>
+        <div class="stack">
+          <div><label for="relationship">Recorded relationship</label><select id="relationship">
+            <option value="PRODUCES">Produces this object</option><option value="CONTRADICTS">Contradicts this object</option>
+            <option value="ALTERNATIVE_TO">Alternative to this object</option><option value="TESTS">Tests this object</option>
+            <option value="REQUIRES">Requires this object</option><option value="DEPENDS_ON">Depends on this object</option>
+            <option value="SUPPORTS">Supports this object</option><option value="IMPLIES">Implies this object</option>
+          </select></div>
+          <button id="find-incoming" data-read>Find incoming objects</button>
+        </div>
+      </details>
+      <section id="index-panel" class="stack" hidden aria-labelledby="index-title">
+        <h3 id="index-title">Indexed objects</h3><p id="index-scope" class="meta break"></p>
+        <div id="index-results" class="stack"></div><button id="next-index" data-read hidden>Read next page</button>
+      </section>
+      <details>
+        <summary>Browse configured sources</summary>
+        <div class="stack">
+          <div><label for="object-kind">Object kind</label><select id="object-kind">
+            <option value="ALL">All objects</option><option value="CLAIM">Claims</option><option value="FACT">Facts</option>
+            <option value="RULE">Rules</option><option value="ASSUMPTION">Assumptions</option><option value="HYPOTHESIS">Hypotheses</option>
+            <option value="DERIVATION">Derivations</option><option value="EVIDENCE">Evidence</option><option value="GOAL">Goals</option>
+            <option value="ACTION">Actions and retained DSL</option><option value="EXPERIMENT">Experiments</option>
+            <option value="TEST_RESULT">Test results</option><option value="CONTRADICTION">Contradictions</option>
+          </select></div>
+          <button id="browse-kind" data-read>Read object page</button>
+        </div>
+      </details>
+      <details id="loaded"><summary>Loaded object groups</summary><div id="loaded-groups" class="stack"></div></details>
+      <p class="meta">An unavailable object is not false. These reads do not run the reasoner, execute artifacts or publish data.</p>
+    </aside>
+  </main>
+</body>
+</html>

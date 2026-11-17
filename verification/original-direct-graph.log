@@ -1,0 +1,235 @@
+status: completed exit_code: 0
+c++ -Iinclude -isystem /opt/homebrew/Cellar/libzim/9.8.2_1/include -isystem /opt/homebrew/Cellar/xapian/2.1.0_1/include -isystem /opt/homebrew/Cellar/xz/5.8.4/include -isystem /opt/homebrew/opt/zstd/include -isystem /opt/homebrew/opt/icu4c@79/include -isystem /opt/homebrew/Cellar/gmp/6.3.0/include -isystem /opt/homebrew/Cellar/json-c/0.19/include -isystem /opt/homebrew/Cellar/json-c/0.19/include/json-c -isystem /opt/homebrew/Cellar/openssl@4/4.1.0/include  -O2 -std=c++20 -Wall -Wextra -Wpedantic -Werror src/main.cpp src/core.cpp src/library.cpp src/gpu.cpp src/translator.cpp src/semantic.cpp src/relational.cpp src/binary_dispatch.cpp src/problem.cpp src/problem_input.cpp src/problem_verify.cpp src/problem_wire.cpp src/problem_semantic.cpp -L/opt/homebrew/Cellar/libzim/9.8.2_1/lib -lzim -lxml2 -L/opt/homebrew/Cellar/gmp/6.3.0/lib -lgmpxx -lgmp -lcurl -L/opt/homebrew/Cellar/json-c/0.19/lib -ljson-c -L/opt/homebrew/Cellar/openssl@4/4.1.0/lib -lcrypto -ldl -L/opt/homebrew/Cellar/openssl@4/4.1.0/lib -lssl -lcrypto -o build/axiom
+ld: warning: ignoring duplicate libraries: '-lcrypto'
+DIRECT_CASE recursive-ancestor
+relational goal: ancestor(ana,cy)
+complete grounding: 38 instances
+r0 = parent(ana,ana)
+r1 = parent(ana,bo)
+r2 = parent(ana,cy)
+r3 = parent(bo,ana)
+r4 = parent(bo,bo)
+r5 = parent(bo,cy)
+r6 = parent(cy,ana)
+r7 = parent(cy,bo)
+r8 = parent(cy,cy)
+r9 = ancestor(ana,ana)
+r10 = ancestor(ana,bo)
+r11 = ancestor(ana,cy)
+r12 = ancestor(bo,ana)
+r13 = ancestor(bo,bo)
+r14 = ancestor(bo,cy)
+r15 = ancestor(cy,ana)
+r16 = ancestor(cy,bo)
+r17 = ancestor(cy,cy)
+ground rule 0: source 0 substitution []
+ground rule 1: source 1 substitution []
+ground rule 2: source 2 substitution [ana,ana]
+ground rule 3: source 2 substitution [ana,bo]
+ground rule 4: source 2 substitution [ana,cy]
+ground rule 5: source 2 substitution [bo,ana]
+ground rule 6: source 2 substitution [bo,bo]
+ground rule 7: source 2 substitution [bo,cy]
+ground rule 8: source 2 substitution [cy,ana]
+ground rule 9: source 2 substitution [cy,bo]
+ground rule 10: source 2 substitution [cy,cy]
+ground rule 11: source 3 substitution [ana,ana,ana]
+ground rule 12: source 3 substitution [ana,ana,bo]
+ground rule 13: source 3 substitution [ana,ana,cy]
+ground rule 14: source 3 substitution [ana,bo,ana]
+ground rule 15: source 3 substitution [ana,bo,bo]
+ground rule 16: source 3 substitution [ana,bo,cy]
+ground rule 17: source 3 substitution [ana,cy,ana]
+ground rule 18: source 3 substitution [ana,cy,bo]
+ground rule 19: source 3 substitution [ana,cy,cy]
+ground rule 20: source 3 substitution [bo,ana,ana]
+ground rule 21: source 3 substitution [bo,ana,bo]
+ground rule 22: source 3 substitution [bo,ana,cy]
+ground rule 23: source 3 substitution [bo,bo,ana]
+ground rule 24: source 3 substitution [bo,bo,bo]
+ground rule 25: source 3 substitution [bo,bo,cy]
+ground rule 26: source 3 substitution [bo,cy,ana]
+ground rule 27: source 3 substitution [bo,cy,bo]
+ground rule 28: source 3 substitution [bo,cy,cy]
+ground rule 29: source 3 substitution [cy,ana,ana]
+ground rule 30: source 3 substitution [cy,ana,bo]
+ground rule 31: source 3 substitution [cy,ana,cy]
+ground rule 32: source 3 substitution [cy,bo,ana]
+ground rule 33: source 3 substitution [cy,bo,bo]
+ground rule 34: source 3 substitution [cy,bo,cy]
+ground rule 35: source 3 substitution [cy,cy,ana]
+ground rule 36: source 3 substitution [cy,cy,bo]
+ground rule 37: source 3 substitution [cy,cy,cy]
+status: PROVED
+goal: r11
+module: "ancestry" version "1.0"
+semantics: ground Horn rules; explicit negation; no explosion
+proofs are conditional on the declared module axioms
+backend: CPU backward search
+search: 19 recorded events; limit reached: no
+step 0: r1 by rule 0 using [] source "declared A"
+step 1: r5 by rule 1 using [] source "declared B"
+step 2: r14 by rule 7 using [1] source "definition"
+step 3: r11 by rule 16 using [0,2] source "recursion"
+goal proof root: 3
+DIRECT_CASE binary-roundtrip
+relational goal: ancestor(ana,cy)
+complete grounding: 38 instances
+r0 = parent(ana,ana)
+r1 = parent(ana,bo)
+r2 = parent(ana,cy)
+r3 = parent(bo,ana)
+r4 = parent(bo,bo)
+r5 = parent(bo,cy)
+r6 = parent(cy,ana)
+r7 = parent(cy,bo)
+r8 = parent(cy,cy)
+r9 = ancestor(ana,ana)
+r10 = ancestor(ana,bo)
+r11 = ancestor(ana,cy)
+r12 = ancestor(bo,ana)
+r13 = ancestor(bo,bo)
+r14 = ancestor(bo,cy)
+r15 = ancestor(cy,ana)
+r16 = ancestor(cy,bo)
+r17 = ancestor(cy,cy)
+ground rule 0: source 0 substitution []
+ground rule 1: source 1 substitution []
+ground rule 2: source 2 substitution [ana,ana]
+ground rule 3: source 2 substitution [ana,bo]
+ground rule 4: source 2 substitution [ana,cy]
+ground rule 5: source 2 substitution [bo,ana]
+ground rule 6: source 2 substitution [bo,bo]
+ground rule 7: source 2 substitution [bo,cy]
+ground rule 8: source 2 substitution [cy,ana]
+ground rule 9: source 2 substitution [cy,bo]
+ground rule 10: source 2 substitution [cy,cy]
+ground rule 11: source 3 substitution [ana,ana,ana]
+ground rule 12: source 3 substitution [ana,ana,bo]
+ground rule 13: source 3 substitution [ana,ana,cy]
+ground rule 14: source 3 substitution [ana,bo,ana]
+ground rule 15: source 3 substitution [ana,bo,bo]
+ground rule 16: source 3 substitution [ana,bo,cy]
+ground rule 17: source 3 substitution [ana,cy,ana]
+ground rule 18: source 3 substitution [ana,cy,bo]
+ground rule 19: source 3 substitution [ana,cy,cy]
+ground rule 20: source 3 substitution [bo,ana,ana]
+ground rule 21: source 3 substitution [bo,ana,bo]
+ground rule 22: source 3 substitution [bo,ana,cy]
+ground rule 23: source 3 substitution [bo,bo,ana]
+ground rule 24: source 3 substitution [bo,bo,bo]
+ground rule 25: source 3 substitution [bo,bo,cy]
+ground rule 26: source 3 substitution [bo,cy,ana]
+ground rule 27: source 3 substitution [bo,cy,bo]
+ground rule 28: source 3 substitution [bo,cy,cy]
+ground rule 29: source 3 substitution [cy,ana,ana]
+ground rule 30: source 3 substitution [cy,ana,bo]
+ground rule 31: source 3 substitution [cy,ana,cy]
+ground rule 32: source 3 substitution [cy,bo,ana]
+ground rule 33: source 3 substitution [cy,bo,bo]
+ground rule 34: source 3 substitution [cy,bo,cy]
+ground rule 35: source 3 substitution [cy,cy,ana]
+ground rule 36: source 3 substitution [cy,cy,bo]
+ground rule 37: source 3 substitution [cy,cy,cy]
+status: PROVED
+goal: r11
+module: "ancestry" version "1.0"
+semantics: ground Horn rules; explicit negation; no explosion
+proofs are conditional on the declared module axioms
+backend: CPU backward search
+search: 19 recorded events; limit reached: no
+step 0: r1 by rule 0 using [] source "declared A"
+step 1: r5 by rule 1 using [] source "declared B"
+step 2: r14 by rule 7 using [1] source "definition"
+step 3: r11 by rule 16 using [0,2] source "recursion"
+goal proof root: 3
+DIRECT_CASE reverse-missing
+relational goal: ancestor(cy,ana)
+complete grounding: 38 instances
+r0 = parent(ana,ana)
+r1 = parent(ana,bo)
+r2 = parent(ana,cy)
+r3 = parent(bo,ana)
+r4 = parent(bo,bo)
+r5 = parent(bo,cy)
+r6 = parent(cy,ana)
+r7 = parent(cy,bo)
+r8 = parent(cy,cy)
+r9 = ancestor(ana,ana)
+r10 = ancestor(ana,bo)
+r11 = ancestor(ana,cy)
+r12 = ancestor(bo,ana)
+r13 = ancestor(bo,bo)
+r14 = ancestor(bo,cy)
+r15 = ancestor(cy,ana)
+r16 = ancestor(cy,bo)
+r17 = ancestor(cy,cy)
+ground rule 0: source 0 substitution []
+ground rule 1: source 1 substitution []
+ground rule 2: source 2 substitution [ana,ana]
+ground rule 3: source 2 substitution [ana,bo]
+ground rule 4: source 2 substitution [ana,cy]
+ground rule 5: source 2 substitution [bo,ana]
+ground rule 6: source 2 substitution [bo,bo]
+ground rule 7: source 2 substitution [bo,cy]
+ground rule 8: source 2 substitution [cy,ana]
+ground rule 9: source 2 substitution [cy,bo]
+ground rule 10: source 2 substitution [cy,cy]
+ground rule 11: source 3 substitution [ana,ana,ana]
+ground rule 12: source 3 substitution [ana,ana,bo]
+ground rule 13: source 3 substitution [ana,ana,cy]
+ground rule 14: source 3 substitution [ana,bo,ana]
+ground rule 15: source 3 substitution [ana,bo,bo]
+ground rule 16: source 3 substitution [ana,bo,cy]
+ground rule 17: source 3 substitution [ana,cy,ana]
+ground rule 18: source 3 substitution [ana,cy,bo]
+ground rule 19: source 3 substitution [ana,cy,cy]
+ground rule 20: source 3 substitution [bo,ana,ana]
+ground rule 21: source 3 substitution [bo,ana,bo]
+ground rule 22: source 3 substitution [bo,ana,cy]
+ground rule 23: source 3 substitution [bo,bo,ana]
+ground rule 24: source 3 substitution [bo,bo,bo]
+ground rule 25: source 3 substitution [bo,bo,cy]
+ground rule 26: source 3 substitution [bo,cy,ana]
+ground rule 27: source 3 substitution [bo,cy,bo]
+ground rule 28: source 3 substitution [bo,cy,cy]
+ground rule 29: source 3 substitution [cy,ana,ana]
+ground rule 30: source 3 substitution [cy,ana,bo]
+ground rule 31: source 3 substitution [cy,ana,cy]
+ground rule 32: source 3 substitution [cy,bo,ana]
+ground rule 33: source 3 substitution [cy,bo,bo]
+ground rule 34: source 3 substitution [cy,bo,cy]
+ground rule 35: source 3 substitution [cy,cy,ana]
+ground rule 36: source 3 substitution [cy,cy,bo]
+ground rule 37: source 3 substitution [cy,cy,cy]
+status: UNKNOWN
+goal: r15
+module: "ancestry" version "1.0"
+semantics: ground Horn rules; explicit negation; no explosion
+proofs are conditional on the declared module axioms
+backend: CPU backward search
+search: 14 recorded events; limit reached: no
+DIRECT_CASE alternatives-and-cycle
+status: PROVED
+goal: destination
+module: "branching_demo" version "1.0"
+semantics: ground Horn rules; explicit negation; no explosion
+proofs are conditional on the declared module axioms
+backend: CPU backward search
+search: 20 recorded events; limit reached: no
+step 0: start by rule 4 using [] source "Demonstration starting assumption."
+step 1: bridge by rule 5 using [] source "Demonstration bridge assumption."
+step 2: destination by rule 3 using [0,1] source "Third branch closes over two explicit premises."
+goal proof root: 2
+DIRECT_CASE contradiction
+status: CONTRADICTION
+goal: signal
+module: "contradiction_demo" version "1.0"
+semantics: ground Horn rules; explicit negation; no explosion
+proofs are conditional on the declared module axioms
+backend: CPU backward search
+search: 6 recorded events; limit reached: no
+step 0: signal by rule 0 using [] source "Assumption from source A."
+step 1: !signal by rule 1 using [] source "Conflicting assumption from source B."
+goal proof root: 0
+opposite proof root: 1

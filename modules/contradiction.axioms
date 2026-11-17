@@ -1,0 +1,4 @@
+axioms 1 contradiction_demo 1.0
+fact signal | Assumption from source A.
+fact !signal | Conflicting assumption from source B.
+rule signal -> observed | Positive signal implies observed within this model.

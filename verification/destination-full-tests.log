@@ -1,0 +1,1289 @@
+Start testing: Nov 17 17:46 +08
+----------------------------------------------------------
+1/72 Testing: bun-bound_sources_cli
+1/72 Test: bun-bound_sources_cli
+Command: "/Users/joey/.omo/agent/bundled-bun/35274930248aeb03/bun" "test" "./tests/bound_sources_cli.test.mjs"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"bun-bound_sources_cli" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+bun test v1.4.2 (744846f84)
+
+tests/bound_sources_cli.test.mjs:
+(pass) offline explicitly bound logic requires current assumption acceptance [920.18ms]
+(pass) offline explicitly bound quantity requires current assumption acceptance [139.62ms]
+
+ 2 pass
+ 0 fail
+ 60 expect() calls
+Ran 2 tests across 1 file. [1065.00ms]
+<end of output>
+Test time =   1.07 sec
+----------------------------------------------------------
+Test Passed.
+"bun-bound_sources_cli" end time: Nov 17 17:46 +08
+"bun-bound_sources_cli" time elapsed: 00:00:01
+----------------------------------------------------------
+
+2/72 Testing: bun-catalogue_cli
+2/72 Test: bun-catalogue_cli
+Command: "/Users/joey/.omo/agent/bundled-bun/35274930248aeb03/bun" "test" "./tests/catalogue_cli.test.mjs"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"bun-catalogue_cli" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+bun test v1.4.2 (744846f84)
+
+tests/catalogue_cli.test.mjs:
+(pass) independently signed feed discovery never accepts before the host command [228.27ms]
+
+ 1 pass
+ 0 fail
+ 43 expect() calls
+Ran 1 test across 1 file. [232.00ms]
+<end of output>
+Test time =   0.24 sec
+----------------------------------------------------------
+Test Passed.
+"bun-catalogue_cli" end time: Nov 17 17:46 +08
+"bun-catalogue_cli" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/72 Testing: bun-contribution_cli
+3/72 Test: bun-contribution_cli
+Command: "/Users/joey/.omo/agent/bundled-bun/35274930248aeb03/bun" "test" "./tests/contribution_cli.test.mjs"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"bun-contribution_cli" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+bun test v1.4.2 (744846f84)
+
+tests/contribution_cli.test.mjs:
+(pass) explicit exact-artifact approval gates snapshot and signed-feed publication commands [789.09ms]
+
+ 1 pass
+ 0 fail
+ 43 expect() calls
+Ran 1 test across 1 file. [792.00ms]
+<end of output>
+Test time =   0.80 sec
+----------------------------------------------------------
+Test Passed.
+"bun-contribution_cli" end time: Nov 17 17:46 +08
+"bun-contribution_cli" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/72 Testing: bun-direct_graph_cli
+4/72 Test: bun-direct_graph_cli
+Command: "/Users/joey/.omo/agent/bundled-bun/35274930248aeb03/bun" "test" "./tests/direct_graph_cli.test.mjs"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"bun-direct_graph_cli" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+bun test v1.4.2 (744846f84)
+
+tests/direct_graph_cli.test.mjs:
+(pass) recursive relational DSL produces the same checked graph through binary transport [435.66ms]
+(pass) removing either jointly necessary premise changes the direct graph outcome [14.85ms]
+(pass) explicit conflicting evidence preserves both roots without inventing missing facts [7.94ms]
+
+ 3 pass
+ 0 fail
+ 21 expect() calls
+Ran 3 tests across 1 file. [461.00ms]
+<end of output>
+Test time =   0.47 sec
+----------------------------------------------------------
+Test Passed.
+"bun-direct_graph_cli" end time: Nov 17 17:46 +08
+"bun-direct_graph_cli" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/72 Testing: bun-maintenance_cli
+5/72 Test: bun-maintenance_cli
+Command: "/Users/joey/.omo/agent/bundled-bun/35274930248aeb03/bun" "test" "./tests/maintenance_cli.test.mjs"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"bun-maintenance_cli" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+bun test v1.4.2 (744846f84)
+
+tests/maintenance_cli.test.mjs:
+(pass) retention plans preserve evidence and cache pruning requires explicit apply [208.37ms]
+
+ 1 pass
+ 0 fail
+ 46 expect() calls
+Ran 1 test across 1 file. [212.00ms]
+<end of output>
+Test time =   0.22 sec
+----------------------------------------------------------
+Test Passed.
+"bun-maintenance_cli" end time: Nov 17 17:46 +08
+"bun-maintenance_cli" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/72 Testing: bun-parallel_runtime_cli
+6/72 Test: bun-parallel_runtime_cli
+Command: "/Users/joey/.omo/agent/bundled-bun/35274930248aeb03/bun" "test" "./tests/parallel_runtime_cli.test.mjs"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"bun-parallel_runtime_cli" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+bun test v1.4.2 (744846f84)
+
+tests/parallel_runtime_cli.test.mjs:
+(pass) application proof batches preserve serial bytes, duplicate identity and unknown outcomes [330.21ms]
+(pass) application batch admission rejects nonproof input and invalid host budgets or fields [95.87ms]
+
+ 2 pass
+ 0 fail
+ 35 expect() calls
+Ran 2 tests across 1 file. [429.00ms]
+<end of output>
+Test time =   0.44 sec
+----------------------------------------------------------
+Test Passed.
+"bun-parallel_runtime_cli" end time: Nov 17 17:46 +08
+"bun-parallel_runtime_cli" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/72 Testing: bun-runtime_cli
+7/72 Test: bun-runtime_cli
+Command: "/Users/joey/.omo/agent/bundled-bun/35274930248aeb03/bun" "test" "./tests/runtime_cli.test.mjs"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"bun-runtime_cli" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+bun test v1.4.2 (744846f84)
+
+tests/runtime_cli.test.mjs:
+(pass) offline DSL, persisted proof, private snapshot and fresh-journal archive replay [114.94ms]
+
+ 1 pass
+ 0 fail
+ 25 expect() calls
+Ran 1 test across 1 file. [118.00ms]
+<end of output>
+Test time =   0.12 sec
+----------------------------------------------------------
+Test Passed.
+"bun-runtime_cli" end time: Nov 17 17:46 +08
+"bun-runtime_cli" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/72 Testing: bun-source_cli
+8/72 Test: bun-source_cli
+Command: "/Users/joey/.omo/agent/bundled-bun/35274930248aeb03/bun" "test" "./tests/source_cli.test.mjs"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"bun-source_cli" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+bun test v1.4.2 (744846f84)
+
+tests/source_cli.test.mjs:
+(pass) actual CLI captures complete ZIM input and stores only goal-free scoped source candidates [467.07ms]
+
+ 1 pass
+ 0 fail
+ 19 expect() calls
+Ran 1 test across 1 file. [470.00ms]
+<end of output>
+Test time =   0.48 sec
+----------------------------------------------------------
+Test Passed.
+"bun-source_cli" end time: Nov 17 17:46 +08
+"bun-source_cli" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/72 Testing: bun-source_quantity_cli
+9/72 Test: bun-source_quantity_cli
+Command: "/Users/joey/.omo/agent/bundled-bun/35274930248aeb03/bun" "test" "./tests/source_quantity_cli.test.mjs"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"bun-source_quantity_cli" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+bun test v1.4.2 (744846f84)
+
+tests/source_quantity_cli.test.mjs:
+(pass) offline library quantity queries retain scoped premises and original-core replay [612.84ms]
+
+ 1 pass
+ 0 fail
+ 35 expect() calls
+Ran 1 test across 1 file. [616.00ms]
+<end of output>
+Test time =   0.62 sec
+----------------------------------------------------------
+Test Passed.
+"bun-source_quantity_cli" end time: Nov 17 17:46 +08
+"bun-source_quantity_cli" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/72 Testing: bun-source_reasoner_cli
+10/72 Test: bun-source_reasoner_cli
+Command: "/Users/joey/.omo/agent/bundled-bun/35274930248aeb03/bun" "test" "./tests/source_reasoner_cli.test.mjs"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"bun-source_reasoner_cli" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+bun test v1.4.2 (744846f84)
+
+tests/source_reasoner_cli.test.mjs:
+(pass) offline source queries retrieve actual scoped rules and replay through the original core [466.20ms]
+
+ 1 pass
+ 0 fail
+ 24 expect() calls
+Ran 1 test across 1 file. [469.00ms]
+<end of output>
+Test time =   0.48 sec
+----------------------------------------------------------
+Test Passed.
+"bun-source_reasoner_cli" end time: Nov 17 17:46 +08
+"bun-source_reasoner_cli" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/72 Testing: bun-task_plan_cli
+11/72 Test: bun-task_plan_cli
+Command: "/Users/joey/.omo/agent/bundled-bun/35274930248aeb03/bun" "test" "./tests/task_plan_cli.test.mjs"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"bun-task_plan_cli" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+bun test v1.4.2 (744846f84)
+
+tests/task_plan_cli.test.mjs:
+(pass) Task IR commands persist requested work without executing or granting permissions [780.34ms]
+
+ 1 pass
+ 0 fail
+ 37 expect() calls
+Ran 1 test across 1 file. [783.00ms]
+<end of output>
+Test time =   0.79 sec
+----------------------------------------------------------
+Test Passed.
+"bun-task_plan_cli" end time: Nov 17 17:46 +08
+"bun-task_plan_cli" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/72 Testing: bun-viewer_graph
+12/72 Test: bun-viewer_graph
+Command: "/Users/joey/.omo/agent/bundled-bun/35274930248aeb03/bun" "test" "./tests/viewer_graph.test.mjs"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"bun-viewer_graph" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+bun test v1.4.2 (744846f84)
+
+tests/viewer_graph.test.mjs:
+(pass) viewer retains joint premise occurrences and distinct alternative derivations [0.47ms]
+(pass) viewer bounds cycles, unexpanded branches and graphical node/edge counts [0.07ms]
+(pass) large joint groups are view-only and retain all duplicate occurrences [0.18ms]
+
+ 3 pass
+ 0 fail
+ 22 expect() calls
+Ran 3 tests across 1 file. [2.00ms]
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"bun-viewer_graph" end time: Nov 17 17:46 +08
+"bun-viewer_graph" time elapsed: 00:00:00
+----------------------------------------------------------
+
+13/72 Testing: bun-viewer_server
+13/72 Test: bun-viewer_server
+Command: "/Users/joey/.omo/agent/bundled-bun/35274930248aeb03/bun" "test" "./tests/viewer_server.test.mjs"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"bun-viewer_server" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+bun test v1.4.2 (744846f84)
+
+tests/viewer_server.test.mjs:
+(pass) loopback inspector reads real native objects without granting effects [137.40ms]
+
+ 1 pass
+ 0 fail
+ 40 expect() calls
+Ran 1 test across 1 file. [142.00ms]
+<end of output>
+Test time =   0.15 sec
+----------------------------------------------------------
+Test Passed.
+"bun-viewer_server" end time: Nov 17 17:46 +08
+"bun-viewer_server" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/72 Testing: core-test
+14/72 Test: core-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/core-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"core-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+core tests passed: 4607 deterministic assertions
+<end of output>
+Test time =   0.43 sec
+----------------------------------------------------------
+Test Passed.
+"core-test" end time: Nov 17 17:46 +08
+"core-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/72 Testing: relational-test
+15/72 Test: relational-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/relational-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"relational-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+relational tests: 7128 checks passed
+<end of output>
+Test time =   0.96 sec
+----------------------------------------------------------
+Test Passed.
+"relational-test" end time: Nov 17 17:46 +08
+"relational-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/72 Testing: binary-dispatch-test
+16/72 Test: binary-dispatch-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/binary-dispatch-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"binary-dispatch-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+BINARY_DISPATCH_TEST_OK legacy_bytes_unchanged=true relational_checked=true problem_checked=true
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"binary-dispatch-test" end time: Nov 17 17:46 +08
+"binary-dispatch-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+17/72 Testing: problem-input-test
+17/72 Test: problem-input-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/problem-input-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"problem-input-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+PROBLEM_INPUT_TEST_OK checks=58
+<end of output>
+Test time =   0.29 sec
+----------------------------------------------------------
+Test Passed.
+"problem-input-test" end time: Nov 17 17:46 +08
+"problem-input-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/72 Testing: problem-test
+18/72 Test: problem-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/problem-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"problem-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+PROBLEM_INTEGRATION_TEST_OK checks=946 independent_quantity_oracles=432
+<end of output>
+Test time =   0.68 sec
+----------------------------------------------------------
+Test Passed.
+"problem-test" end time: Nov 17 17:46 +08
+"problem-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/72 Testing: problem-wire-test
+19/72 Test: problem-wire-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/problem-wire-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"problem-wire-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+problem wire tests passed: 14306 checks
+<end of output>
+Test time =   0.98 sec
+----------------------------------------------------------
+Test Passed.
+"problem-wire-test" end time: Nov 17 17:46 +08
+"problem-wire-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+20/72 Testing: summary-maintenance-test
+20/72 Test: summary-maintenance-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/summary-maintenance-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"summary-maintenance-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+summary maintenance tests passed: 91 deterministic checks
+<end of output>
+Test time =   0.30 sec
+----------------------------------------------------------
+Test Passed.
+"summary-maintenance-test" end time: Nov 17 17:46 +08
+"summary-maintenance-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+21/72 Testing: task-plan-test
+21/72 Test: task-plan-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/task-plan-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"task-plan-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+Task plan passed: 127 deterministic assertions
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"task-plan-test" end time: Nov 17 17:46 +08
+"task-plan-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/72 Testing: context-documents-test
+22/72 Test: context-documents-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/context-documents-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"context-documents-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+Context documents: 43 checks passed
+<end of output>
+Test time =   0.32 sec
+----------------------------------------------------------
+Test Passed.
+"context-documents-test" end time: Nov 17 17:46 +08
+"context-documents-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+23/72 Testing: task-frontend-test
+23/72 Test: task-frontend-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/task-frontend-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"task-frontend-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+Task frontend checks passed: 48
+<end of output>
+Test time =   0.36 sec
+----------------------------------------------------------
+Test Passed.
+"task-frontend-test" end time: Nov 17 17:46 +08
+"task-frontend-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+24/72 Testing: source-reasoner-test
+24/72 Test: source-reasoner-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/source-reasoner-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"source-reasoner-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+Source reasoning passed: 52 deterministic assertions
+<end of output>
+Test time =   0.29 sec
+----------------------------------------------------------
+Test Passed.
+"source-reasoner-test" end time: Nov 17 17:46 +08
+"source-reasoner-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+25/72 Testing: source-quantity-test
+25/72 Test: source-quantity-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/source-quantity-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"source-quantity-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+Source quantity checks passed: 27
+<end of output>
+Test time =   0.20 sec
+----------------------------------------------------------
+Test Passed.
+"source-quantity-test" end time: Nov 17 17:46 +08
+"source-quantity-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+26/72 Testing: source-bindings-test
+26/72 Test: source-bindings-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/source-bindings-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"source-bindings-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+Source binding checks passed: 26
+<end of output>
+Test time =   0.36 sec
+----------------------------------------------------------
+Test Passed.
+"source-bindings-test" end time: Nov 17 17:46 +08
+"source-bindings-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+27/72 Testing: bound-sources-test
+27/72 Test: bound-sources-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/bound-sources-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"bound-sources-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+Bound source checks passed: 81
+<end of output>
+Test time =   0.49 sec
+----------------------------------------------------------
+Test Passed.
+"bound-sources-test" end time: Nov 17 17:46 +08
+"bound-sources-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+28/72 Testing: publisher-feed-test
+28/72 Test: publisher-feed-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/publisher-feed-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"publisher-feed-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+Publisher feeds passed: 43 deterministic assertions
+<end of output>
+Test time =   0.29 sec
+----------------------------------------------------------
+Test Passed.
+"publisher-feed-test" end time: Nov 17 17:46 +08
+"publisher-feed-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+29/72 Testing: publisher-catalogue-test
+29/72 Test: publisher-catalogue-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/publisher-catalogue-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"publisher-catalogue-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+Publisher catalogue passed: 66 deterministic assertions
+<end of output>
+Test time =   0.35 sec
+----------------------------------------------------------
+Test Passed.
+"publisher-catalogue-test" end time: Nov 17 17:46 +08
+"publisher-catalogue-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+30/72 Testing: block-retention-test
+30/72 Test: block-retention-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/block-retention-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"block-retention-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+Block retention passed: 63 deterministic assertions
+<end of output>
+Test time =   0.30 sec
+----------------------------------------------------------
+Test Passed.
+"block-retention-test" end time: Nov 17 17:46 +08
+"block-retention-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+31/72 Testing: retention-test
+31/72 Test: retention-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/retention-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"retention-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+Working-set retention passed: 51 deterministic assertions
+<end of output>
+Test time =   0.35 sec
+----------------------------------------------------------
+Test Passed.
+"retention-test" end time: Nov 17 17:46 +08
+"retention-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+32/72 Testing: contribution-publish-test
+32/72 Test: contribution-publish-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/contribution-publish-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"contribution-publish-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+Contribution publication passed: 64 deterministic assertions
+<end of output>
+Test time =   0.35 sec
+----------------------------------------------------------
+Test Passed.
+"contribution-publish-test" end time: Nov 17 17:46 +08
+"contribution-publish-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+33/72 Testing: contribution-test
+33/72 Test: contribution-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/contribution-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"contribution-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+Contribution preparation passed: 40 deterministic assertions
+<end of output>
+Test time =   0.46 sec
+----------------------------------------------------------
+Test Passed.
+"contribution-test" end time: Nov 17 17:46 +08
+"contribution-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+34/72 Testing: inspection-test
+34/72 Test: inspection-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/inspection-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"inspection-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+Inspection checks passed: 113
+<end of output>
+Test time =   0.32 sec
+----------------------------------------------------------
+Test Passed.
+"inspection-test" end time: Nov 17 17:46 +08
+"inspection-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+35/72 Testing: session-tasks-test
+35/72 Test: session-tasks-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/session-tasks-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"session-tasks-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+session task state passed: 76 deterministic assertions
+<end of output>
+Test time =   0.39 sec
+----------------------------------------------------------
+Test Passed.
+"session-tasks-test" end time: Nov 17 17:46 +08
+"session-tasks-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+36/72 Testing: knowledge-reasoner-test
+36/72 Test: knowledge-reasoner-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/knowledge-reasoner-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"knowledge-reasoner-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+knowledge reasoning integration passed: 28 deterministic assertions
+<end of output>
+Test time =   0.43 sec
+----------------------------------------------------------
+Test Passed.
+"knowledge-reasoner-test" end time: Nov 17 17:46 +08
+"knowledge-reasoner-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+37/72 Testing: source-ingestion-test
+37/72 Test: source-ingestion-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/source-ingestion-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"source-ingestion-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+Detect dangling redirects
+Detect loops and/or blind chains of redirects
+Index titles
+Set entry indices
+Adding checksum...
+ZIM file is ready!
+source ingestion integration passed: 31 deterministic assertions
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"source-ingestion-test" end time: Nov 17 17:46 +08
+"source-ingestion-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+38/72 Testing: read-policy-test
+38/72 Test: read-policy-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/read-policy-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"read-policy-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+shared read policy passed: 22 deterministic assertions
+<end of output>
+Test time =   0.49 sec
+----------------------------------------------------------
+Test Passed.
+"read-policy-test" end time: Nov 17 17:46 +08
+"read-policy-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+39/72 Testing: drive-network-test
+39/72 Test: drive-network-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/drive-network-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"drive-network-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+drive network policy passed: 42 deterministic assertions
+<end of output>
+Test time =   0.34 sec
+----------------------------------------------------------
+Test Passed.
+"drive-network-test" end time: Nov 17 17:46 +08
+"drive-network-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+40/72 Testing: task-ir-test
+40/72 Test: task-ir-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/task-ir-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"task-ir-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+task IR integration passed: 50 deterministic assertions
+<end of output>
+Test time =   0.45 sec
+----------------------------------------------------------
+Test Passed.
+"task-ir-test" end time: Nov 17 17:46 +08
+"task-ir-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+41/72 Testing: context-test
+41/72 Test: context-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/context-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"context-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+Context checks passed: 128
+<end of output>
+Test time =   0.37 sec
+----------------------------------------------------------
+Test Passed.
+"context-test" end time: Nov 17 17:46 +08
+"context-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+42/72 Testing: conversation-test
+42/72 Test: conversation-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/conversation-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"conversation-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+Conversation checks passed: 84
+<end of output>
+Test time =   0.49 sec
+----------------------------------------------------------
+Test Passed.
+"conversation-test" end time: Nov 17 17:46 +08
+"conversation-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+43/72 Testing: knowledge-test
+43/72 Test: knowledge-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/knowledge-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"knowledge-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+knowledge tests passed: 6053 deterministic assertions
+<end of output>
+Test time =   0.62 sec
+----------------------------------------------------------
+Test Passed.
+"knowledge-test" end time: Nov 17 17:46 +08
+"knowledge-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+44/72 Testing: remote-mount-test
+44/72 Test: remote-mount-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/remote-mount-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"remote-mount-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+remote mount tests passed: 39 deterministic assertions
+<end of output>
+Test time =   0.34 sec
+----------------------------------------------------------
+Test Passed.
+"remote-mount-test" end time: Nov 17 17:46 +08
+"remote-mount-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+45/72 Testing: remote-query-test
+45/72 Test: remote-query-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/remote-query-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"remote-query-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+remote query tests passed: 354 deterministic assertions
+<end of output>
+Test time =   0.46 sec
+----------------------------------------------------------
+Test Passed.
+"remote-query-test" end time: Nov 17 17:46 +08
+"remote-query-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+46/72 Testing: block-pin-test
+46/72 Test: block-pin-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/block-pin-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"block-pin-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+block pin tests passed: 93 deterministic assertions
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"block-pin-test" end time: Nov 17 17:46 +08
+"block-pin-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+47/72 Testing: gateway-test
+47/72 Test: gateway-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/gateway-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"gateway-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+gateway tests passed: 44 deterministic assertions
+<end of output>
+Test time =   0.56 sec
+----------------------------------------------------------
+Test Passed.
+"gateway-test" end time: Nov 17 17:46 +08
+"gateway-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+48/72 Testing: block-cache-test
+48/72 Test: block-cache-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/block-cache-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"block-cache-test" start time: Nov 17 17:46 +08
+Output:
+----------------------------------------------------------
+block cache tests passed: 120 deterministic assertions
+<end of output>
+Test time =   0.99 sec
+----------------------------------------------------------
+Test Passed.
+"block-cache-test" end time: Nov 17 17:47 +08
+"block-cache-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+49/72 Testing: block-cid-test
+49/72 Test: block-cid-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/block-cid-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"block-cid-test" start time: Nov 17 17:47 +08
+Output:
+----------------------------------------------------------
+block CID tests passed: 1099 deterministic assertions
+<end of output>
+Test time =   0.45 sec
+----------------------------------------------------------
+Test Passed.
+"block-cid-test" end time: Nov 17 17:47 +08
+"block-cid-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+50/72 Testing: virtual-drive-test
+50/72 Test: virtual-drive-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/virtual-drive-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"virtual-drive-test" start time: Nov 17 17:47 +08
+Output:
+----------------------------------------------------------
+virtual drive tests passed: 851 deterministic assertions
+<end of output>
+Test time =   0.95 sec
+----------------------------------------------------------
+Test Passed.
+"virtual-drive-test" end time: Nov 17 17:47 +08
+"virtual-drive-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+51/72 Testing: archive-registry-test
+51/72 Test: archive-registry-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/archive-registry-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"archive-registry-test" start time: Nov 17 17:47 +08
+Output:
+----------------------------------------------------------
+archive registry tests passed: 54 deterministic assertions
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"archive-registry-test" end time: Nov 17 17:47 +08
+"archive-registry-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+52/72 Testing: gks-snapshot-test
+52/72 Test: gks-snapshot-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/gks-snapshot-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"gks-snapshot-test" start time: Nov 17 17:47 +08
+Output:
+----------------------------------------------------------
+GKS snapshot tests passed: 1396 deterministic assertions
+<end of output>
+Test time =   0.72 sec
+----------------------------------------------------------
+Test Passed.
+"gks-snapshot-test" end time: Nov 17 17:47 +08
+"gks-snapshot-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+53/72 Testing: gks-test
+53/72 Test: gks-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/gks-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"gks-test" start time: Nov 17 17:47 +08
+Output:
+----------------------------------------------------------
+GKS format tests passed: 361 deterministic assertions
+<end of output>
+Test time =   0.50 sec
+----------------------------------------------------------
+Test Passed.
+"gks-test" end time: Nov 17 17:47 +08
+"gks-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+54/72 Testing: retrieval-test
+54/72 Test: retrieval-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/retrieval-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"retrieval-test" start time: Nov 17 17:47 +08
+Output:
+----------------------------------------------------------
+retrieval tests passed: 61 deterministic assertions
+<end of output>
+Test time =   0.30 sec
+----------------------------------------------------------
+Test Passed.
+"retrieval-test" end time: Nov 17 17:47 +08
+"retrieval-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+55/72 Testing: knowledge-stream-test
+55/72 Test: knowledge-stream-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/knowledge-stream-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"knowledge-stream-test" start time: Nov 17 17:47 +08
+Output:
+----------------------------------------------------------
+knowledge stream tests passed: 49 deterministic assertions
+<end of output>
+Test time =   0.40 sec
+----------------------------------------------------------
+Test Passed.
+"knowledge-stream-test" end time: Nov 17 17:47 +08
+"knowledge-stream-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+56/72 Testing: source-archive-test
+56/72 Test: source-archive-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/source-archive-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"source-archive-test" start time: Nov 17 17:47 +08
+Output:
+----------------------------------------------------------
+Detect dangling redirects
+Detect loops and/or blind chains of redirects
+Index titles
+Set entry indices
+Adding checksum...
+ZIM file is ready!
+Detect dangling redirects
+Detect loops and/or blind chains of redirects
+Index titles
+Set entry indices
+Adding checksum...
+ZIM file is ready!
+source archive tests passed: 39 deterministic assertions
+<end of output>
+Test time =   0.44 sec
+----------------------------------------------------------
+Test Passed.
+"source-archive-test" end time: Nov 17 17:47 +08
+"source-archive-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+57/72 Testing: source-compiler-test
+57/72 Test: source-compiler-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/source-compiler-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"source-compiler-test" start time: Nov 17 17:47 +08
+Output:
+----------------------------------------------------------
+source compiler tests passed: 97 deterministic assertions
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"source-compiler-test" end time: Nov 17 17:47 +08
+"source-compiler-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+58/72 Testing: source-knowledge-test
+58/72 Test: source-knowledge-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/source-knowledge-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"source-knowledge-test" start time: Nov 17 17:47 +08
+Output:
+----------------------------------------------------------
+Detect dangling redirects
+Detect loops and/or blind chains of redirects
+Index titles
+Set entry indices
+Adding checksum...
+ZIM file is ready!
+source knowledge integration passed: generated ZIM, scoped query, native verification, cross-store journal restart
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"source-knowledge-test" end time: Nov 17 17:47 +08
+"source-knowledge-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+59/72 Testing: journal-test
+59/72 Test: journal-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/journal-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"journal-test" start time: Nov 17 17:47 +08
+Output:
+----------------------------------------------------------
+journal tests passed: 192 deterministic assertions
+<end of output>
+Test time =   0.44 sec
+----------------------------------------------------------
+Test Passed.
+"journal-test" end time: Nov 17 17:47 +08
+"journal-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+60/72 Testing: reasoning-test
+60/72 Test: reasoning-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/reasoning-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"reasoning-test" start time: Nov 17 17:47 +08
+Output:
+----------------------------------------------------------
+reasoning certificate tests passed: 94 deterministic assertions
+<end of output>
+Test time =   0.37 sec
+----------------------------------------------------------
+Test Passed.
+"reasoning-test" end time: Nov 17 17:47 +08
+"reasoning-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+61/72 Testing: forward-reasoning-test
+61/72 Test: forward-reasoning-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/forward-reasoning-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"forward-reasoning-test" start time: Nov 17 17:47 +08
+Output:
+----------------------------------------------------------
+forward reasoning tests passed: 116 deterministic assertions
+<end of output>
+Test time =   0.35 sec
+----------------------------------------------------------
+Test Passed.
+"forward-reasoning-test" end time: Nov 17 17:47 +08
+"forward-reasoning-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+62/72 Testing: hypotheses-test
+62/72 Test: hypotheses-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/hypotheses-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"hypotheses-test" start time: Nov 17 17:47 +08
+Output:
+----------------------------------------------------------
+hypothesis tests passed: 34 deterministic assertions
+<end of output>
+Test time =   0.32 sec
+----------------------------------------------------------
+Test Passed.
+"hypotheses-test" end time: Nov 17 17:47 +08
+"hypotheses-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+63/72 Testing: goal-planner-test
+63/72 Test: goal-planner-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/goal-planner-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"goal-planner-test" start time: Nov 17 17:47 +08
+Output:
+----------------------------------------------------------
+goal planner tests passed: 60 deterministic assertions
+<end of output>
+Test time =   0.39 sec
+----------------------------------------------------------
+Test Passed.
+"goal-planner-test" end time: Nov 17 17:47 +08
+"goal-planner-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+64/72 Testing: native-cok-test
+64/72 Test: native-cok-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/native-cok-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"native-cok-test" start time: Nov 17 17:47 +08
+Output:
+----------------------------------------------------------
+native CoK tests passed: 420 deterministic assertions
+<end of output>
+Test time =   0.37 sec
+----------------------------------------------------------
+Test Passed.
+"native-cok-test" end time: Nov 17 17:47 +08
+"native-cok-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+65/72 Testing: problem-semantic-test
+65/72 Test: problem-semantic-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/problem-semantic-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"problem-semantic-test" start time: Nov 17 17:47 +08
+Output:
+----------------------------------------------------------
+PROBLEM_SEMANTIC_TEST_OK checks=77
+<end of output>
+Test time =   0.40 sec
+----------------------------------------------------------
+Test Passed.
+"problem-semantic-test" end time: Nov 17 17:47 +08
+"problem-semantic-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+66/72 Testing: problem-registry-test
+66/72 Test: problem-registry-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/problem-registry-test" "/Users/joey/development/my-project/AI-project-GammaThink/tests/fixtures/linear-unit-context.json"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"problem-registry-test" start time: Nov 17 17:47 +08
+Output:
+----------------------------------------------------------
+Registry integration: 212 checks passed; 32 units, 6 dimensional products
+<end of output>
+Test time =   0.34 sec
+----------------------------------------------------------
+Test Passed.
+"problem-registry-test" end time: Nov 17 17:47 +08
+"problem-registry-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+67/72 Testing: problem-sources-test
+67/72 Test: problem-sources-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/problem-sources-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"problem-sources-test" start time: Nov 17 17:47 +08
+Output:
+----------------------------------------------------------
+Source catalog checks: 65
+<end of output>
+Test time =   0.35 sec
+----------------------------------------------------------
+Test Passed.
+"problem-sources-test" end time: Nov 17 17:47 +08
+"problem-sources-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+68/72 Testing: quantified-theory-test
+68/72 Test: quantified-theory-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/quantified-theory-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"quantified-theory-test" start time: Nov 17 17:47 +08
+Output:
+----------------------------------------------------------
+Quantified shared-theory checks passed: 37
+<end of output>
+Test time =   0.31 sec
+----------------------------------------------------------
+Test Passed.
+"quantified-theory-test" end time: Nov 17 17:47 +08
+"quantified-theory-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+69/72 Testing: quantified-equations-test
+69/72 Test: quantified-equations-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/quantified-equations-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"quantified-equations-test" start time: Nov 17 17:47 +08
+Output:
+----------------------------------------------------------
+Quantified equation checks passed: 60
+<end of output>
+Test time =   0.31 sec
+----------------------------------------------------------
+Test Passed.
+"quantified-equations-test" end time: Nov 17 17:47 +08
+"quantified-equations-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+70/72 Testing: source-quantified-test
+70/72 Test: source-quantified-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/source-quantified-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"source-quantified-test" start time: Nov 17 17:47 +08
+Output:
+----------------------------------------------------------
+Quantified source persistence checks passed: 54
+<end of output>
+Test time =   0.50 sec
+----------------------------------------------------------
+Test Passed.
+"source-quantified-test" end time: Nov 17 17:47 +08
+"source-quantified-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+71/72 Testing: parallel-reasoning-test
+71/72 Test: parallel-reasoning-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/parallel-reasoning-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"parallel-reasoning-test" start time: Nov 17 17:47 +08
+Output:
+----------------------------------------------------------
+parallel reasoning tests passed: 55 deterministic checks
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"parallel-reasoning-test" end time: Nov 17 17:47 +08
+"parallel-reasoning-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+72/72 Testing: document-retrieval-test
+72/72 Test: document-retrieval-test
+Command: "/Users/joey/development/my-project/AI-project-GammaThink/build/document-retrieval-test"
+Directory: /Users/joey/development/my-project/AI-project-GammaThink
+"document-retrieval-test" start time: Nov 17 17:47 +08
+Output:
+----------------------------------------------------------
+Document retrieval: 52 checks passed
+<end of output>
+Test time =   0.35 sec
+----------------------------------------------------------
+Test Passed.
+"document-retrieval-test" end time: Nov 17 17:47 +08
+"document-retrieval-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 17 17:47 +08

@@ -1,0 +1,10 @@
+axioms 2 ancestry 1.0
+constant ana
+constant bo
+constant cy
+predicate parent 2
+predicate ancestor 2
+fact parent(ana,bo) | declared A
+fact parent(bo,cy) | declared B
+rule parent(?x,?y) -> ancestor(?x,?y) | definition
+rule parent(?x,?z) & ancestor(?z,?y) -> ancestor(?x,?y) | recursion

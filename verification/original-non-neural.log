@@ -1,0 +1,270 @@
+status: completed exit_code: 0
+./build/summary-maintenance-test
+summary maintenance tests passed: 91 deterministic checks
+./build/experiments-test
+Experiment checks passed: 75
+bun test ./tests/session_cli.test.mjs ./tests/context_documents_cli.test.mjs
+bun test v1.4.2 (744846f84)
+
+tests/session_cli.test.mjs:
+✓ resource observations report real process and disk scope without task or model authority [125.31ms]
+✓ native reasoning survives separate commands and delivers an indexed private response [211.25ms]
+✓ code cannot obtain execution rights from source text or Task IR [501.69ms]
+✓ same-turn correction invalidates the captured execution context [125.84ms]
+✓ sessions and literal historical retrieval remain isolated [159.04ms]
+✓ unknown fields and missing experimental models fail without executable task admission [74.45ms]
+✓ complete ZIM input materializes scoped source knowledge without claiming fidelity or truth (profile 1) [272.99ms]
+✓ complete ZIM input materializes scoped source knowledge without claiming fidelity or truth (profile 2) [256.97ms]
+✓ version2 source capture inspection stays private and rejects unknown formats [113.92ms]
+✓ private visualize persists a readable artifact across command restarts [229.22ms]
+✓ private request-publication persists a readable artifact across command restarts [223.88ms]
+✓ local archive mounts persist and supply scoped reasoning without publication or network authority [441.87ms]
+✓ same-turn refinement adds prerequisites without weakening original intent or reusing old scope [917.38ms]
+✓ archive provider limits and missing mounted roots never silently drop a library [410.10ms]
+✓ remote reads require explicit capabilities, cache offline, and disclose queries only by approval [699.07ms]
+✓ actual observations remain separate from provisional hypotheses and scientific confirmation [163.90ms]
+
+tests/context_documents_cli.test.mjs:
+✓ private documents enter attributed bounded context without becoming instructions or knowledge [178.63ms]
+✓ document recall isolates projects and sessions while shared project records remain visible [161.17ms]
+
+ 18 pass
+ 0 fail
+ 795 expect() calls
+Ran 18 tests across 2 files. [5.27s]
+./build/task-source-test
+Detect dangling redirects
+Detect loops and/or blind chains of redirects
+Index titles
+Set entry indices
+Adding checksum...
+ZIM file is ready!
+Task source checks passed: 61
+./build/task-refinement-test
+Task refinement checks passed: 20
+./build/task-reviews-test
+Task review checks passed: 50
+./build/context-documents-test
+Context documents: 43 checks passed
+./build/document-retrieval-test
+Document retrieval: 52 checks passed
+bun test ./tests/parallel_runtime_cli.test.mjs
+bun test v1.4.2 (744846f84)
+
+tests/parallel_runtime_cli.test.mjs:
+✓ application proof batches preserve serial bytes, duplicate identity and unknown outcomes [25.84ms]
+✓ application batch admission rejects nonproof input and invalid host budgets or fields [59.99ms]
+
+ 2 pass
+ 0 fail
+ 35 expect() calls
+Ran 2 tests across 1 file. [90.00ms]
+./build/publisher-catalogue-test
+Publisher catalogue passed: 66 deterministic assertions
+./build/contribution-publish-test
+Contribution publication passed: 64 deterministic assertions
+./build/source-reasoner-test
+Source reasoning passed: 52 deterministic assertions
+./build/source-quantity-test
+Source quantity checks passed: 27
+./build/source-bindings-test
+Source binding checks passed: 26
+./build/bound-sources-test
+Bound source checks passed: 81
+./build/task-plan-test
+Task plan passed: 127 deterministic assertions
+./build/block-retention-test
+Block retention passed: 63 deterministic assertions
+./build/retention-test
+Working-set retention passed: 51 deterministic assertions
+./build/publisher-feed-test
+Publisher feeds passed: 43 deterministic assertions
+./build/contribution-test
+Contribution preparation passed: 40 deterministic assertions
+./build/inspection-test
+Inspection checks passed: 113
+./build/drive-network-test
+drive network policy passed: 42 deterministic assertions
+./build/read-policy-test
+shared read policy passed: 22 deterministic assertions
+./build/source-ingestion-test
+Detect dangling redirects
+Detect loops and/or blind chains of redirects
+Index titles
+Set entry indices
+Adding checksum...
+ZIM file is ready!
+source ingestion integration passed: 31 deterministic assertions
+./build/session-tasks-test
+session task state passed: 76 deterministic assertions
+./build/knowledge-reasoner-test
+knowledge reasoning integration passed: 28 deterministic assertions
+./build/task-ir-test
+task IR integration passed: 50 deterministic assertions
+./build/knowledge-test
+knowledge tests passed: 6053 deterministic assertions
+./build/journal-test
+journal tests passed: 192 deterministic assertions
+./build/reasoning-test
+reasoning certificate tests passed: 94 deterministic assertions
+./build/forward-reasoning-test
+forward reasoning tests passed: 116 deterministic assertions
+./build/hypotheses-test
+hypothesis tests passed: 34 deterministic assertions
+./build/goal-planner-test
+goal planner tests passed: 60 deterministic assertions
+./build/native-cok-test
+native CoK tests passed: 420 deterministic assertions
+./build/source-archive-test
+Detect dangling redirects
+Detect loops and/or blind chains of redirects
+Index titles
+Set entry indices
+Adding checksum...
+ZIM file is ready!
+Detect dangling redirects
+Detect loops and/or blind chains of redirects
+Index titles
+Set entry indices
+Adding checksum...
+ZIM file is ready!
+source archive tests passed: 39 deterministic assertions
+./build/source-compiler-test
+source compiler tests passed: 97 deterministic assertions
+./build/source-knowledge-test
+Detect dangling redirects
+Detect loops and/or blind chains of redirects
+Index titles
+Set entry indices
+Adding checksum...
+ZIM file is ready!
+source knowledge integration passed: generated ZIM, scoped query, native verification, cross-store journal restart
+./build/retrieval-test
+retrieval tests passed: 61 deterministic assertions
+./build/knowledge-stream-test
+knowledge stream tests passed: 49 deterministic assertions
+./build/gks-test
+GKS format tests passed: 361 deterministic assertions
+./build/gks-snapshot-test
+GKS snapshot tests passed: 1396 deterministic assertions
+./build/archive-registry-test
+archive registry tests passed: 54 deterministic assertions
+./build/virtual-drive-test
+virtual drive tests passed: 851 deterministic assertions
+./build/block-cid-test
+block CID tests passed: 1099 deterministic assertions
+./build/gateway-test
+gateway tests passed: 44 deterministic assertions
+./build/block-cache-test
+block cache tests passed: 120 deterministic assertions
+./build/block-pin-test
+block pin tests passed: 93 deterministic assertions
+./build/remote-query-test
+remote query tests passed: 354 deterministic assertions
+./build/remote-mount-test
+remote mount tests passed: 39 deterministic assertions
+./build/conversation-test
+Conversation checks passed: 84
+./build/context-test
+Context checks passed: 128
+./build/model-prompt-test
+Model prompt checks passed: 22
+./build/task-frontend-test
+Task frontend checks passed: 48
+./build/task-operators-test
+Native task operator checks passed: 64
+./build/summary-session-test
+Summary session: 19 checks passed
+./build/task-session-test
+task session integration passed: 98 deterministic assertions
+./build/session-tasks-test
+session task state passed: 76 deterministic assertions
+./build/task-ir-test
+task IR integration passed: 50 deterministic assertions
+./build/task-code-test
+Task code integration passed: 130 deterministic assertions
+bun test ./tests/runtime_cli.test.mjs ./tests/source_cli.test.mjs
+bun test v1.4.2 (744846f84)
+
+tests/runtime_cli.test.mjs:
+✓ offline DSL, persisted proof, private snapshot and fresh-journal archive replay [102.91ms]
+
+tests/source_cli.test.mjs:
+✓ actual CLI captures complete ZIM input and stores only goal-free scoped source candidates [117.58ms]
+
+ 2 pass
+ 0 fail
+ 44 expect() calls
+Ran 2 tests across 2 files. [234.00ms]
+bun test ./tests/viewer_graph.test.mjs ./tests/viewer_server.test.mjs
+bun test v1.4.2 (744846f84)
+
+tests/viewer_graph.test.mjs:
+✓ viewer retains joint premise occurrences and distinct alternative derivations [0.49ms]
+✓ viewer bounds cycles, unexpanded branches and graphical node/edge counts [0.06ms]
+✓ large joint groups are view-only and retain all duplicate occurrences [0.21ms]
+
+tests/viewer_server.test.mjs:
+✓ loopback inspector reads real native objects without granting effects [87.08ms]
+
+ 4 pass
+ 0 fail
+ 62 expect() calls
+Ran 4 tests across 2 files. [96.00ms]
+./build/maintenance-scheduler-test
+Maintenance scheduling passed: 32 deterministic assertions
+./build/block-retention-test
+Block retention passed: 63 deterministic assertions
+./build/retention-test
+Working-set retention passed: 51 deterministic assertions
+bun test ./tests/maintenance_cli.test.mjs
+bun test v1.4.2 (744846f84)
+
+tests/maintenance_cli.test.mjs:
+✓ retention plans preserve evidence and cache pruning requires explicit apply [141.04ms]
+
+ 1 pass
+ 0 fail
+ 46 expect() calls
+Ran 1 test across 1 file. [154.00ms]
+./build/publisher-feed-test
+Publisher feeds passed: 43 deterministic assertions
+./build/publisher-catalogue-test
+Publisher catalogue passed: 66 deterministic assertions
+bun test ./tests/catalogue_cli.test.mjs
+bun test v1.4.2 (744846f84)
+
+tests/catalogue_cli.test.mjs:
+✓ independently signed feed discovery never accepts before the host command [166.81ms]
+
+ 1 pass
+ 0 fail
+ 43 expect() calls
+Ran 1 test across 1 file. [172.00ms]
+bun test ./tests/contribution_cli.test.mjs
+bun test v1.4.2 (744846f84)
+
+tests/contribution_cli.test.mjs:
+✓ explicit exact-artifact approval gates snapshot and signed-feed publication commands [100.64ms]
+
+ 1 pass
+ 0 fail
+ 43 expect() calls
+Ran 1 test across 1 file. [108.00ms]
+./build/source-reasoner-test
+Source reasoning passed: 52 deterministic assertions
+./build/source-quantity-test
+Source quantity checks passed: 27
+bun test ./tests/source_reasoner_cli.test.mjs ./tests/source_quantity_cli.test.mjs
+bun test v1.4.2 (744846f84)
+
+tests/source_reasoner_cli.test.mjs:
+✓ offline source queries retrieve actual scoped rules and replay through the original core [90.37ms]
+
+tests/source_quantity_cli.test.mjs:
+✓ offline library quantity queries retain scoped premises and original-core replay [120.77ms]
+
+ 2 pass
+ 0 fail
+ 59 expect() calls
+Ran 2 tests across 2 files. [218.00ms]
