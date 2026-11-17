@@ -1,5 +1,5 @@
 # AI-project-GammaThink
-There and big issues in the current world.The shortage of RAM is quite dire and this project is an attempt to run frontier level intelligence AI on minimal hardware.The core design was a simultaneous discovery.I first modelled it after my own thought process then i realised that scientists had already published papers highly similar to my own architecture, however my design adds extra elements that i believe will boost overall model accuracy and intelligence.
+There are big issues in the current world.The shortage of RAM is quite dire and this project is an attempt to run frontier level intelligence AI on minimal hardware.The core design was a simultaneous discovery.I first modelled it after my own thought process then i realised that scientists had already published papers highly similar to my own architecture, however my design adds extra elements that i believe will boost overall model accuracy and intelligence.
 
 # Design 
 To check out the design, please refer to [AI Agent Architecture and topology](AI%20Agent%20Architecture%20and%20topology.md) file.
