@@ -1643,12 +1643,16 @@
     {
       "source": "tests/source_quantified_cli.test.mjs",
       "destination": "tests/source_quantified_cli.test.mjs",
-      "sha256": "45f5f0a5d6b053d763e5c8068402e85c11f14bf3daa97d4826d6460bdb579df1"
+      "original_sha256": "45f5f0a5d6b053d763e5c8068402e85c11f14bf3daa97d4826d6460bdb579df1",
+      "sha256": "5c7b5fdd8e960f1dd9a4e9f02caaa14c3905f2723b81f174c620c2fb71272345",
+      "command_paths_adapted": true
     },
     {
       "source": "tests/source_quantified_resource_cli.test.mjs",
       "destination": "tests/source_quantified_resource_cli.test.mjs",
-      "sha256": "313ef5c6614ff90d7f64da49aeee9fc5a2e92c663b2d404042f8dc21458a6790"
+      "original_sha256": "313ef5c6614ff90d7f64da49aeee9fc5a2e92c663b2d404042f8dc21458a6790",
+      "sha256": "bd5218f17670b4195d0bc49518dde0b589dcd29993d4fd6a2df614d64c90f61a",
+      "command_paths_adapted": true
     },
     {
       "source": "tests/bound_sources_cli.test.mjs",

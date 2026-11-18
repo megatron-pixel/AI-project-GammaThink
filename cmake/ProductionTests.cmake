@@ -25,6 +25,7 @@ if(BUN_EXECUTABLE)
   set(bun_tests
     bound_sources_cli catalogue_cli contribution_cli direct_graph_cli maintenance_cli
     parallel_runtime_cli runtime_cli source_cli source_quantity_cli source_reasoner_cli
+    source_quantified_cli source_quantified_resource_cli
     task_plan_cli)
   if(EXISTS "${PROJECT_SOURCE_DIR}/viewer/graph.mjs")
     list(APPEND bun_tests viewer_graph)

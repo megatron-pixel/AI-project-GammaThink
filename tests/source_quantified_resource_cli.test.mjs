@@ -21,9 +21,9 @@ test("native expansion capacity is resource-limited, never a false or partial so
   try {
     for (const oversized of [false, true]) {
       const fixture = join(temporary, oversized ? "oversized" : "normal");
-      const metadata = await invoke("source-quantified-resource-v3-test",
+      const metadata = await invoke("source-quantified-test",
         oversized ? [fixture, "--oversized"] : [fixture]);
-      const result = await invoke("gammathink-quantified-resource-v3", [
+      const result = await invoke("gammathink", [
         "query-source", metadata.module, join(fixture, "host.json"), join(fixture, "goal.json"),
         join(temporary, oversized ? "limited.db" : "normal.db"),
         join(fixture, metadata.snapshot), metadata.root,

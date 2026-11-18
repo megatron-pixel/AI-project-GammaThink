@@ -18,4 +18,4 @@ Start with [BUILDING.md](BUILDING.md), [direct core usage](verification/DIRECT_R
 - [PHASE 10 — DISTRIBUTED KNOWLEDGE](phases/10-distributed-knowledge/README.md)
 - [PHASE 11 — PERFORMANCE AND SCALE](phases/11-performance-and-scale/README.md)
 
-`source-manifest.json` records original paths, SHA-256 digests and the eight include-path-only adaptations. The staged-only formal CLI and CMake configuration are new organization glue. Existing project README, license and design are preserved.
+`source-manifest.json` records original paths, SHA-256 digests, the eight include-path-only adaptations and two quantified-source test command-path adaptations. The staged-only formal CLI and CMake configuration are new organization glue. Existing project README, license and design are preserved.

@@ -20,12 +20,12 @@ test("version2 quantified source snapshots query and replay through the offline 
   const temporary = await mkdtemp(join(tmpdir(), "gammathink-quantified-cli-"));
   try {
     const fixture = join(temporary, "fixture");
-    const metadata = await invoke("source-quantified-v2-test", [fixture]);
+    const metadata = await invoke("source-quantified-test", [fixture]);
     const journal = join(temporary, "journal.db");
     const snapshot = join(fixture, "snapshot");
     const args = ["query-source", metadata.module, join(fixture, "host.json"),
       join(fixture, "goal.json"), journal, snapshot, metadata.root];
-    const result = await invoke("gammathink-quantified-source-v2", args);
+    const result = await invoke("gammathink", args);
     expect(result.status).toBe("checked");
     expect(result.source_profile).toBe("bounded-module-quantity-v1");
     expect(result.source_member_queries).toBe(4);
@@ -34,11 +34,11 @@ test("version2 quantified source snapshots query and replay through the offline 
     expect(result.english_meaning_certified).toBe(false);
     expect(result.empirical_truth_certified).toBe(false);
     expect(result.unavailable).toEqual([]);
-    const repeated = await invoke("gammathink-quantified-source-v2", args);
+    const repeated = await invoke("gammathink", args);
     expect(repeated.status).toBe("checked");
     expect(repeated.reused).toBe(true);
     expect(repeated.native_executions).toBe(0);
-    const replay = await invoke("gammathink-quantified-source-v2",
+    const replay = await invoke("gammathink",
       ["resume", result.request, journal, snapshot, metadata.root]);
     expect(replay.status).toBe("checked");
     expect(replay.reused).toBe(true);
@@ -46,7 +46,7 @@ test("version2 quantified source snapshots query and replay through the offline 
     await Bun.write(absentGoal, '["q",3,0]');
     const unresolved = [...args];
     unresolved[3] = absentGoal;
-    const absent = await invoke("gammathink-quantified-source-v2", unresolved);
+    const absent = await invoke("gammathink", unresolved);
     expect(absent.status).toBe("unresolved");
     expect(absent.unavailable).toEqual([]);
     expect(absent.neural_calls).toBe(0);

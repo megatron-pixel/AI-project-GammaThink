@@ -58,11 +58,10 @@ source-root `build/`, including with a different CMake binary directory, for
 compatibility with the existing CLI fixtures.
 
 Bun CLI and viewer tests are registered when Bun and their staged dependencies
-are available. The two historical quantified CLI suites require main-owned
-source adaptations: they reference experimental executable names
-`source-quantified-v2-test`, `source-quantified-resource-v3-test` and
-`gammathink-quantified-resource-v3`, which are not staging targets. They are
-not registered. Session CLI tests also require a non-staged
+are available. The two quantified-source CLI suites use the production
+`source-quantified-test` fixture and `gammathink` command. Both are registered
+and retain their snapshot/restart, missing-goal and resource-limit assertions.
+Session CLI tests still require a non-staged
 `source-profile-cli-fixture-v2` and are not registered. The supplied
 `context_documents_cli.test.mjs` requires the optional session application.
 No training-policy, inference, probe or benchmark tests are selected.
