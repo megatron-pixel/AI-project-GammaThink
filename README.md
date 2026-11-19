@@ -64,4 +64,4 @@ remaining legal and operational limits.
 
 # Developing & Testing Usage Recommendations
 
-**Recommended Safety Procedures**Sandboxing the model in a docker or container during testing.
+**Recommended Safety Procedures**:Sandboxing the model in a docker or container during testing.
