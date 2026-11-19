@@ -25,17 +25,42 @@ Each link opens the component folder on its dedicated development branch. The br
 
 # License & Terms of Use
 
-This project is licensed under the **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)** License.
+GammaThink's original project materials are **proprietary and free to use
+under the [Custom GammaThink Proprietary Free-Use License](LICENSE)**.
 
-**Strictly Prohibited:** Commercial use or selling this software (including any modified versions).
+This is the author's custom copyright license, not a government-issued
+license or certification.
 
-**Allowed:** Modifying, remixing, and sharing this software, *only if* the new versions are also shared for free under this same license.
+Copyright (c) 2026 megatron-pixel. All rights reserved.
 
-**Technology, Data or Product resulting from Project GammaThink**
-Any resulting Technology, Data and Knowledge,  scientific or non-scientific, may be commercialised.However, the designed product, theory and/or technology must be published to the open-source community in full detail with no omissions in any way, form or method.
+You may download, install, compile, run and test the software without a
+license fee, subject to the license. Ownership is not transferred.
+Selling the software, modified versions or paid access to it requires the
+author's prior written permission. Redistribution is not generally granted.
 
-**Attribution:** Full credit must be given to the original author.
-For the full legal terms, please read the [LICENSE](LICENSE) file.
+The [LICENSE](LICENSE) contains the complete permissions, restrictions,
+attribution requirements and terms for commercializing resulting work.
+External materials retain their own rights and terms; see
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+## Shared knowledge and contributions
+
+The proprietary software and the knowledge people choose to publish have
+separate terms. CoK graphs, derivations and corrections expressly designated
+as Published Knowledge use **CC BY-SA 4.0**, permitting reuse, modification,
+merging and redistribution, including commercially, with the standard
+license's attribution and ShareAlike conditions. This does not relicense
+GammaThink's implementation or its architecture document.
+
+See [KNOWLEDGE_LICENSE.md](KNOWLEDGE_LICENSE.md) and the
+[knowledge contribution terms](CONTRIBUTING.md). Contributions are voluntary;
+private journals and conversations are not automatically published.
+Validated contributions may be combined into searchable, versioned GKS
+snapshots. This is not a promise of an operating weekly global service.
+
+The proprietary license and contribution agreement select Singapore law.
+[LEGAL_NOTES_SG.md](LEGAL_NOTES_SG.md) records the official sources and
+remaining legal and operational limits.
 
 # Developing & Testing Usage Recommendations
 
